@@ -5,96 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicLink</title>
     <link rel="stylesheet" href="style.css">
- <style>
-    body {
-      background-image: url('bimbi.png');
-    }
-  </style>
+
+    <script>
+      var i = 0;
+      var images = [];
+      var slideTime = 2000; // 3 seconds
+    
+      images[0] = './assets/slideshow/acqua.png';
+      images[1] = './assets/slideshow/aereo.png';
+      images[2] = './assets/slideshow/auto.png';
+      images[3] = './assets/slideshow/avocado.png';
+      images[4] = './assets/slideshow/bimbi.png';
+      images[5] = './assets/slideshow/cane.png';
+      images[6] = './assets/slideshow/elefante.png';
+      images[7] = './assets/slideshow/fiori.png';
+      images[8] = './assets/slideshow/gatto.png';
+      images[9] = './assets/slideshow/mare.png';
+      images[10] = './assets/slideshow/monte.png';
+      images[11] = './assets/slideshow/panino.png';
+      images[12] = './assets/slideshow/sprechi.png';
+      images[13] = './assets/slideshow/statua.png';
+    
+      function changePicture() {
+          document.body.style.backgroundImage = "url(" + images[i] + ")";
+    
+          if (i < images.length - 1) {
+              i++;
+          } else {
+              i = 0;
+          }
+          setTimeout(changePicture, slideTime);
+      }
+    
+      window.onload = changePicture;
+    </script>
+
+    
 </head>
 
 <body> 
-<!--<div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <img src="./assets/slideshow/acqua.png">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./assets/slideshow/aereo.png">
-    </div>
-
-    <div class="mySlides fade">
-      <img src="./assets/slideshow/auto.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/avocado.png">
-      </div>
-
-    <div class="mySlides fade">
-      <img src="./assets/slideshow/bimbi.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/cane.png">
-      </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/elefante.png">
-      </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/fiori.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/gatto.png">
-      </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/mare.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/monte.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/sprechi.png">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="./assets/slideshow/statua.png">
-    </div>
-      
-    <div class="titolo">
-        <img src="./assets/Senzanome.png">
-      </div>      
-      
-    <div class="bottoni">
-        <button class="bottone">ACCEDI</button>
-        <button class="bottone">REGISTRATI</button>
-    </div>
-</div> -->
-
-
-<script>
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 1000); // Change image every 2 seconds
-    }
-</script>
 
 </body>
 </html>
