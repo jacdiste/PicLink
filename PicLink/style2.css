@@ -1,0 +1,52 @@
+.titolo{
+  display: block;
+  margin: auto;
+  margin-bottom: 150px;
+}
+
+.bottone {
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 550px;
+  height: 80px;
+  background-color:#ffcf0f;
+  border-radius: 16px;
+  border-width: 0 0 4.5px 0;
+  box-sizing: border-box;
+  color:black;
+  cursor: pointer;
+  font-family: din-round,sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  border-color: white;
+  outline:solid;
+  overflow: auto;
+  text-align: center;
+  user-select: none;
+}
+
+.bottone:hover {
+  filter: brightness(1.1);
+}
+
+.bottone:active {
+  border-width: 0 0 0 0;
+  transform:translateY(4px);
+}
+
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width: 600px){
+  .bottone{
+    transform: translateX(80px) translateY(120px);
+    
+  }
+}
