@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicLink</title>
+    <link rel="stylesheet" href="../css/gamemode.css">
+</head>
+<body>
+    <div id="profile">
+        <button class="bottone" name="monete">MONETE</button>
+    </div>
+
+    <div class="themes-container">
+        <div class="theme fade">
+            <div class="numbertext">1</div>
+            <img src="../foto/immagini-temi/gatto.png" style="width:100%">
+            <div class="text">Tema animali</div>
+        </div>
+
+        <div class="theme fade">
+            <div class="numbertext">2</div>
+            <img src="../foto/immagini-temi/bimbi.png" style="width:100%">
+            <div class="text">Tema sport</div>
+        </div>
+        
+        <div class="theme fade">
+            <div class="numbertext">3</div>
+            <img src="../foto/immagini-temi/cane.png" style="width:100%">
+            <div class="text">Tema arte</div>
+        </div>
+
+        <a class="prev" onclick="plusThemes(-1)">&#10094;</a>
+        <a class="next" onclick="plusThemes(1)">&#10095;</a>
+    </div>
+
+    <div id="play">
+        <button class="bottone" name="gioca">GIOCA</button>
+    </div>
+
+    <script src="../javascript/gamemode.js"></script>
+</body>
+</html>
