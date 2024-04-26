@@ -4,7 +4,7 @@
   margin-bottom: 150px;
 }
 
-.bottone {
+.bottone-homepage {
   display: block;
   margin: auto;
   margin-bottom: 20px;
@@ -14,25 +14,26 @@
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   box-sizing: border-box;
-  color:black;
+  color:rgb(0, 0, 0);
   cursor: pointer;
   font-family: din-round,sans-serif;
   font-size: 22px;
   font-weight: 700;
   letter-spacing: .8px;
   line-height: 20px;
-  border-color: white;
+  border-color: rgb(255, 255, 255);
   outline:solid;
   overflow: auto;
   text-align: center;
   user-select: none;
+  transition: .2s;
 }
 
-.bottone:hover {
-  filter: brightness(1.1);
+.bottone-homepage:hover {
+  filter: brightness(1.2);
 }
 
-.bottone:active {
+.bottone-homepage:active {
   border-width: 0 0 0 0;
   transform:translateY(4px);
 }
@@ -45,7 +46,7 @@ body {
 }
 
 @media screen and (max-width: 600px){
-  .bottone{
+  .bottone-homepage{
     transform: translateX(80px) translateY(120px);
     
   }

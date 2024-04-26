@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PicLink</title>
+    <link rel="stylesheet" href="../css/login&registration.css">
+
+   <script>
+        var images = [];
+        var slideTime = 3000;
+        images[0] = '../foto/immagini-login/acqua.png';
+        images[1] = '../foto/immagini-login/aereo.png';
+        images[2] = '../foto/immagini-login/auto.png';
+        images[3] = '../foto/immagini-login/avocado.png';
+        images[4] = '../foto/immagini-login/bimbi.png';
+        images[5] = '../foto/immagini-login/cane.png';
+        images[6] = '../foto/immagini-login/elefante.png';
+        images[7] = '../foto/immagini-login/fiori.png';
+        images[8] = '../foto/immagini-login/gatto.png';
+        images[9] = '../foto/immagini-login/mare.png';
+        images[10] = '../foto/immagini-login/monte.png';
+        images[11] = '../foto/immagini-login/panino.png';
+        images[12] = '../foto/immagini-login/sprechi.png';
+        images[13] = '../foto/immagini-login/statua.png';
+        var i = Math.floor(Math.random() * (images.length-1)); 
+        function changePicture() {
+            document.body.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(" + images[i] + ")"
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout(changePicture, slideTime);
+        }
+        window.onload = changePicture;
+    </script> 
+</head>
+<body>
+    <div class="wrapper">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Nome utente o email" required>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                </svg>
+            </div>
+            
+            <div class="input-box">
+                <input id="password" type="password" placeholder="Password" required>
+                <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer" onclick="myFunction()">
+                    <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                </svg>
+
+                <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer" onclick="myFunction()">
+                    <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+                  </svg>
+            </div>
+
+            <script src="../javascript/login&registration.js"></script>
+
+            <button type="submit" class="button">Accedi</button>
+            
+            <div class="registration-link">
+                <p>Non hai un account? <a href="./registration.html">Registrati</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

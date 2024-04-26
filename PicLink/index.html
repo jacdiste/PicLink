@@ -4,48 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicLink</title>
-    <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="./css/homepage.css">
+    
     <script>
-      var images = [];
-      var slideTime = 2000; // 3 seconds
-    
-      images[0] = './assets/slideshow/acqua.png';
-      images[1] = './assets/slideshow/aereo.png';
-      images[2] = './assets/slideshow/auto.png';
-      images[3] = './assets/slideshow/avocado.png';
-      images[4] = './assets/slideshow/bimbi.png';
-      images[5] = './assets/slideshow/cane.png';
-      images[6] = './assets/slideshow/elefante.png';
-      images[7] = './assets/slideshow/fiori.png';
-      images[8] = './assets/slideshow/gatto.png';
-      images[9] = './assets/slideshow/mare.png';
-      images[10] = './assets/slideshow/monte.png';
-      images[11] = './assets/slideshow/panino.png';
-      images[12] = './assets/slideshow/sprechi.png';
-      images[13] = './assets/slideshow/statua.png';
-    
-      var i = Math.floor(Math.random() * (images.length-1)); 
-    
-      function changePicture() {
-          document.body.style.backgroundImage = "url(" + images[i] + ")";
-
-          if (i < images.length - 1) {
-              i++;
-          } else {
-              i = 0;
-          }
-
-          setTimeout(changePicture, slideTime);
-      }
-    
-      window.onload = changePicture;
+        var images = [];
+        var slideTime = 3000;
+        images[0] = './foto/immagini-homepage/acqua.png';
+        images[1] = './foto/immagini-homepage/aereo.png';
+        images[2] = './foto/immagini-homepage/auto.png';
+        images[3] = './foto/immagini-homepage/avocado.png';
+        images[4] = './foto/immagini-homepage/bimbi.png';
+        images[5] = './foto/immagini-homepage/cane.png';
+        images[6] = './foto/immagini-homepage/elefante.png';
+        images[7] = './foto/immagini-homepage/fiori.png';
+        images[8] = './foto/immagini-homepage/gatto.png';
+        images[9] = './foto/immagini-homepage/mare.png';
+        images[10] = './foto/immagini-homepage/monte.png';
+        images[11] = './foto/immagini-homepage/panino.png';
+        images[12] = './foto/immagini-homepage/sprechi.png';
+        images[13] = './foto/immagini-homepage/statua.png';
+        var i = Math.floor(Math.random() * (images.length-1)); 
+        function changePicture() {
+            document.body.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(" + images[i] + ")"
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout(changePicture, slideTime);
+        }
+        window.onload = changePicture;
     </script>
 
-    
 </head>
 
 <body> 
-
+    <div id="titolo">
+        <img src="./foto/titolo.png" class="titolo">
+    </div>
+    
+    <div id="bottoni">
+        <button class="bottone-homepage" name="Login">ACCEDI</button>
+        <button class="bottone-homepage" name="Registration">REGISTRATI</button>
+    </div>
+    <script src="./javascript/homepage.js"></script>
 </body>
 </html>
