@@ -5,18 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicLink</title>
     <link rel="stylesheet" href="../css/gamemode.css">
+    <script src="../javascript/gamemode.js" defer></script>
 </head>
 <body>
     <div id="profile">
         <div id="avatar-bar">
-            <div class="avatar">
+            <div class="avatar" onclick="toggleDropdown();">
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                     <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                  </svg>
+                </svg>
             </div>
-            <span class="username">Username123</span>
+            <span class="username">Username123</span>   
         </div>
+
+        <div class="dropdown">
+            <button class="bottone" onclick="window.location='../index.html'">Disconnetti</button>
+            <button class="bottone">Cancella Account</button>
+        </div>    
 
         <div id="money-container">
             <span id="money">9999999</span>
@@ -32,7 +38,11 @@
 
     <div class="themes-container">
         <div class="theme">
-            <img class="foto-tema" src="../foto/immagini-temi/gatto1.png">
+            <!--<picture> 
+                <source media="(max-width:599px)" srcset="../foto/immagini-temi/gatto-mobile.png">
+                <source media="(min-width:600px)" srcset="../foto/immagini-temi/gatto.png"> -->
+                <img class="foto-tema" src="../foto/immagini-temi/gatto.png" alt="gatto">
+            <!--</picture> -->
             <div class="text">Tema animali</div>
         </div>
 
@@ -54,6 +64,5 @@
         <button class="bottone" name="gioca">GIOCA</button>
     </div>
 
-    <script src="../javascript/gamemode.js"></script>
 </body>
 </html>

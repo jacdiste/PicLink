@@ -32,11 +32,28 @@ body {
   border-radius: 50%;
   overflow: hidden;
   background-color:#ffe600;
+  cursor: pointer;
 }
 
 .username {
   font-size: 18px;
   font-family:Arial, Helvetica, sans-serif;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  padding: 50px 10px 20px 10px;
+  outline: auto;
+  background: white;
+  border-radius: 17px;
+  z-index: 100;
+}
+
+.dropdown button {
+  width: 200px;
 }
 
 /* MONEY CONTAINER */
@@ -74,7 +91,7 @@ body {
   padding: 10px 0 30px 0;
 }
 
-.themes {
+.theme {
   display: none;
 }
 
@@ -82,7 +99,6 @@ body {
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
   margin-top: -40px;
   padding: 12px;
   color: rgb(255, 255, 255);
@@ -94,9 +110,13 @@ body {
 }
 
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  right: 26%;
 }
+
+.prev{
+  left: 26%;
+}
+
 
 .text {
   color: #f2f2f2;
@@ -110,8 +130,10 @@ body {
 }
 
 .foto-tema {
-  width: 100%;
+  width: 50%;
   border-radius: 17px;
+  margin:auto;
+  display:block;
 }
 
 /* PLAY BUTTON */
@@ -155,11 +177,12 @@ body {
       gap:12%;
       padding-left: 0%;
       padding-right: 0%;
+      padding-top: 5%;
     }
 
     #play {
-      padding-left:16%;
-      padding-top: 40%;     
+      padding-left:0%;
+      padding-top: 20%;     
     }
 
     .bottone{
@@ -168,9 +191,27 @@ body {
     }
 
     .themes-container {
-      padding-top:40%;
+      padding-top:30%;
+      padding-right: 20%;
+      padding-left: auto;
     }
 
+    .foto-tema {
+      width: 100%;
+      margin:auto;
+      display: block;
+      transform: translateX(15%);
+    }
+
+    .prev {
+      left:10%;
+      top:69%;
+    }
+
+    .next{
+      right:7%;
+      top:69%;
+    }
 }
 
 
