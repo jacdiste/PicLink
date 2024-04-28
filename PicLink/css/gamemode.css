@@ -1,10 +1,75 @@
+#profile {
+  display:flex;
+  align-items: center;
+  padding: 30px 30px 30px 30px;
+}
+
+#avatar-bar {
+  width: 250px;
+  height: 80px;
+  padding: 10px 20px;
+  background-color: #F5DD61;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width:70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+}
+
+.username {
+  font-size: 18px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+#money {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+ 
+#money-container svg {
+  background-color: #ffe600;
+  border-radius: 14px;
+  width: 24px;
+  height: 24px;
+  margin-left :auto;
+}
+
+#money-container {
+  width: 150px;
+  height: 40px;
+  margin-left: auto;
+  margin-right:0;
+  padding: 10px 20px;
+  background-color: #F5DD61;
+  border-radius: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.foto-tema {
+  width: 100%;
+  border-radius: 17px;
+}
+
 .bottone{
     display: block;
     margin: auto;
     margin-bottom: 20px;
     width: 550px;
     height: 80px;
-    background-color:#ffcf0f;
+    background-color: #59D5E0;
     border-radius: 16px;
     border-width: 0 0 4.5px 0;
     box-sizing: border-box;
@@ -15,7 +80,7 @@
     font-weight: 700;
     letter-spacing: .8px;
     line-height: 20px;
-    border-color: white;
+    border-color: rgb(255, 255, 255);
     outline:solid;
     overflow: auto;
     text-align: center;
@@ -32,30 +97,27 @@
   }
   
 body {
-    display:contents;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  background-color:rgb(3, 11, 43);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size:contain;
+  background-position: center;
 }
   
-  @media screen and (max-width: 600px){
+@media screen and (max-width: 600px){
     .bottone{
       transform: translateX(80px) translateY(120px);
       
     }
   }
 
-  * {box-sizing:border-box}
-
   /* Slideshow container */
   .themes-container {
-    max-width: 80%;
+    max-width: 90%;
+    max-height: fit-content;
     position: relative;
     margin: auto;
+    padding: 10px 0 30px 0;
   }
   
   /* Hide the images by default */
@@ -91,44 +153,9 @@ body {
     font-style:oblique;
     font-size: 25px;
     padding: 8px 12px;
-    position: absolute;
+    position:absolute;
     bottom: 30px;
     width: 100%;
     text-align: center;
   }
-
-  /* Number text (1/3 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 25px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-  
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  .active, .dot:hover {
-    background-color: #717171;
-  }
-  
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-  
-  @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-  }
+ 
