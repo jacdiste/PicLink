@@ -84,11 +84,16 @@ body {
 
 /* THEMES CONTAINER */
 .themes-container {
-  max-width: 90%;
-  max-height: fit-content;
   position: relative;
-  margin: auto;
   padding: 10px 0 30px 0;
+  overflow-x: hidden;
+}
+
+.foto-tema {
+  width: 1900px;
+  height: 600px;
+  border-radius: 17px;
+  display:block;
 }
 
 .theme {
@@ -129,12 +134,7 @@ body {
   text-align: center;
 }
 
-.foto-tema {
-  width: 50%;
-  border-radius: 17px;
-  margin:auto;
-  display:block;
-}
+
 
 /* PLAY BUTTON */
 .bottone{
@@ -173,45 +173,39 @@ body {
 @media screen and (max-width: 600px){
   #profile {
       display:flex;
-      align-items: center;
-      gap:12%;
-      padding-left: 0%;
-      padding-right: 0%;
-      padding-top: 5%;
+      flex-direction: column;
+      align-items: baseline;
+      padding-top: 5px;
+      padding-bottom: 0px;
     }
 
-    #play {
-      padding-left:0%;
-      padding-top: 20%;     
-    }
+  #money-container {
+    margin: auto;
+    margin-top:5px;
+  }
 
-    .bottone{
-      width: 300px;
-      height:80px;
-    }
-
-    .themes-container {
-      padding-top:30%;
-      padding-right: 20%;
-      padding-left: auto;
-    }
-
-    .foto-tema {
-      width: 100%;
-      margin:auto;
-      display: block;
-      transform: translateX(15%);
-    }
-
-    .prev {
-      left:10%;
-      top:69%;
-    }
-
-    .next{
-      right:7%;
-      top:69%;
-    }
+  #play {
+    padding-top: 0;     
+  }
+  .bottone{
+    width: 300px;
+    height:80px;
+  }
+  .themes-container {
+    padding-top:30px;
+  }
+  .foto-tema {
+    width: 345px;
+    height: 380px;
+  }
+  .prev {
+    left:10%;
+    top:69%;
+  }
+  .next{
+    right:7%;
+    top:69%;
+  }
 }
 
 
