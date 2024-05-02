@@ -90,8 +90,7 @@ body {
 }
 
 .foto-tema {
-  width: 1900px;
-  height: 600px;
+  width: 100%;
   border-radius: 17px;
   display:block;
 }
@@ -194,10 +193,6 @@ body {
   .themes-container {
     padding-top:30px;
   }
-  .foto-tema {
-    width: 345px;
-    height: 380px;
-  }
   .prev {
     left:10%;
     top:69%;
@@ -207,7 +202,6 @@ body {
     top:69%;
   }
 }
-
 
 
   
