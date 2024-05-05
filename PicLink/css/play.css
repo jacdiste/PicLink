@@ -1,0 +1,118 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(4, 16, 63);
+}
+
+.level-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(3, 11, 43);
+    border-bottom: solid black 5px;
+    margin-bottom: 10px;
+}
+
+#back {
+    cursor: pointer;
+    max-width: 5%;
+    padding: 5px;
+}
+
+#numero-livello {
+    margin:auto;
+    color:white;
+    font-size: 60px;
+}
+
+#gobackhome {
+    width: 4%;
+    margin-right: 0.5%;
+    fill:white;
+    cursor: pointer;
+}
+
+.images-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-row-gap: 0px;
+}
+
+.image {
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: 600px;
+    height: 350px;
+    outline: solid yellow;
+}
+
+.top-left {
+    margin-left:auto;
+    margin-right:2.5%;
+    margin-bottom:1.25%;
+}
+
+.top-right {
+    margin-right: auto;
+    margin-left: 2.5%;
+    margin-bottom: 1.25%;
+}
+
+.bottom-left {
+    margin-left:auto;
+    margin-right:2.5%;
+    margin-top: 1.25%;
+}
+
+.bottom-right {
+    margin-right: auto;
+    margin-left: 2.5%;
+    margin-top: 1.25%;
+}
+
+.answer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 40px;
+    gap: 1%;
+}
+
+#answer-input {
+    margin-left:auto;
+    width: 400px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+#link{
+    margin-right: auto;
+    width: 300px;
+    height: 80px;
+    background-color: #59D5E0;
+    border-radius: 16px;
+    border-width: 0 0 4.5px 0;
+    box-sizing: border-box;
+    color:black;
+    cursor: pointer;
+    font-family: din-round,sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    border-color: rgb(255, 255, 255);
+    outline:solid;
+    overflow: auto;
+    text-align: center;
+    user-select: none;
+  }
+  
+#link:hover {
+    filter: brightness(1.1);
+}
+  
+#link:active {
+    border-width: 0 0 0 0;
+    transform:translateY(4px);
+}
