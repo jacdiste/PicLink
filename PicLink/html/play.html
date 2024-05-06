@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/play.css">
+    <script src="../javascript/play.js"></script>
 </head>
 <body>
     <div class="level-info">
@@ -32,8 +33,18 @@
     </div>
 
     <div class="answer">
-        <input id="answer-input" />
-        <button type="submit" id="link">LINK</button>
+        <input id="answer-input" placeholder="Scrivi qui la tua risposta"/>
+        <button type="submit" id="link" onclick="togglePopup()">LINK</button>
     </div>
+
+    <div id="popupOverlay" class="overlay-container"> 
+        <div class="popup-box"> 
+            <h2 id="titolopopup">HAI INDOVINATO!</h2> 
+            <span id="monetepopup">Hai guadagnato N monete!</span>
+            <button class="bottonepopup" id="tornamenu" onclick="">Torna al menu</button>
+            <button class="bottonepopup" id="prossimolvl" onclick="togglePopup()">Prossimo livello</button> 
+        </div> 
+    </div>
+
 </body>
 </html>
