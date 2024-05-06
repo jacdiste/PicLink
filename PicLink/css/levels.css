@@ -1,0 +1,117 @@
+.sup{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+}
+
+#titolo{
+  color:white;
+  font-size: 60px;
+  display: flex;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.container{
+	display:grid;
+  margin: auto;
+  width: 90%;
+  margin-top: 130px;
+  place-items: center;
+  place-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(115px, 1em));
+	gap: 12%;
+}
+
+.bottone {
+  width: 145px;
+  height: 145px;
+  background-color:#ffcf0f;
+  border-radius: 16px;
+  border-width: 0 0 4.5px 0;
+  box-sizing: border-box;
+  color:rgb(0, 0, 0);
+  cursor: pointer;
+  font-family: din-round,sans-serif;
+  font-size: 2em;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  border-color: rgb(255, 255, 255);
+  outline:solid;
+  text-align: center;
+  user-select: none;
+  transition: .2s;
+}
+
+.bottone:hover{
+  filter: brightness(1.2);
+}
+
+.bottone:active{
+  border-width: 0 0 0 0;
+  transform:translateY(4px);
+}
+
+
+@media screen and (max-width: 945px) {
+  .container {
+    grid-template-columns: repeat(4, minmax(55px, 1fr));
+  }
+  .bottone {
+    width: 120px;
+    height: 120px;
+  }
+  #titolo{
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 1100px) and (max-height:1400px) {
+  .container {
+    margin-top: 160px;
+    grid-template-columns: repeat(3, minmax(55px, 1fr));
+    column-gap: 1px;
+  }
+  .bottone {
+    width: 120px;
+    height: 120px;
+  }
+  #titolo{
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    margin-top: 130px;
+    grid-template-columns: repeat(3, minmax(55px, 1fr));
+  }
+  .bottone {
+    width: 100px;
+    height: 100px;
+  }
+  #titolo{
+    font-size: 38px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container {
+    margin-top: 120px;
+    grid-template-columns: repeat(3, minmax(55px, 1fr));
+  }
+  .bottone {
+    width: 90px;
+    height: 90px;
+  }
+  #titolo{
+    font-size: 30px;
+  }
+}
+
+body {
+  background-color: rgb(4, 16, 63);
+}
