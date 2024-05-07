@@ -41,6 +41,7 @@ body {
     overflow-x: hidden;
     overflow-y: hidden;
     outline: solid yellow;
+    user-select: none;
 }
 .foto {
     width: 100%;
@@ -75,7 +76,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 0px;
     gap: 1%;
 }
 
@@ -86,6 +87,7 @@ body {
     font-size: 25px;
     text-align: center;
     outline: solid yellow;
+    user-select: none;
 }
 
 #link{
