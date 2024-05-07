@@ -47,6 +47,10 @@ body {
 }
 
 @media screen and (max-width: 600px){
+  .titolo {
+    margin-top: 10%;
+  }
+
   .bottone-homepage{
     transform: translateX(80px) translateY(120px);
     
