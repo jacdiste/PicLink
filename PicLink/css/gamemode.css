@@ -100,6 +100,10 @@ body {
   filter: brightness(0.2);
 }
 
+.animali {
+  filter: brightness(0.9);
+}
+
 .theme {
   display: none;
 }
@@ -149,6 +153,10 @@ body {
   bottom: 30px;
   width: 100%;
   text-align: center;
+}
+
+.animal {
+  color: black;
 }
 
 .bottone-sblocca {
