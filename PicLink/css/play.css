@@ -43,6 +43,7 @@ body {
     outline: solid yellow;
     user-select: none;
 }
+
 .foto {
     width: 100%;
     height: 100%;
@@ -76,7 +77,7 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
     gap: 1%;
 }
 
@@ -110,6 +111,7 @@ body {
     overflow: auto;
     text-align: center;
     user-select: none;
+    transition: .2s;
   }
   
 #link:hover {
@@ -132,8 +134,6 @@ body {
     background: rgba(0, 0, 0, 0.6); 
     justify-content: center; 
     align-items: center; 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
 } 
 
 .popup-box { 
@@ -147,8 +147,6 @@ body {
     height: 60%;
     text-align: center; 
     align-items: center;
-    opacity: 0; 
-    transform: scale(0.8); 
     animation: fadeInUp 0.5s ease-out forwards; 
 } 
 

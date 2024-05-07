@@ -172,6 +172,7 @@ body {
   overflow: auto;
   text-align: center;
   user-select: none;
+  transition: .2s;
 }
 
 .bottone-sblocca:hover {
@@ -228,6 +229,7 @@ body {
   overflow: auto;
   text-align: center;
   user-select: none;
+  transition: .2s;
 }
 
 .bottone:hover {
