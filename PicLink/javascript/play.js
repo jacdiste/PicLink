@@ -1,4 +1,9 @@
 function togglePopup() { 
     const overlay = document.getElementById('popupOverlay'); 
-    overlay.classList.toggle('show'); 
+    if(document.getElementById('answer-input').value == "COLOSSEO") {
+        overlay.classList.toggle('show'); 
+    }
+    else {
+        alert("Si na latrin");
+    }
 } 

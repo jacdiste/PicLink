@@ -5,15 +5,15 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: rgb(4, 16, 63);
+    background-color: #114250;
 }
 
 .level-info {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgb(3, 11, 43);
-    border-bottom: solid black 5px;
+    background-color: #0a262e;
+    padding-bottom: 10px;
     margin-bottom: 10px;
 }
 
@@ -44,7 +44,7 @@ body {
 .image {
     overflow-x: hidden;
     overflow-y: hidden;
-    outline: solid yellow;
+    outline: solid #FFC93C;
     user-select: none;
 }
 
@@ -91,7 +91,7 @@ body {
     height: 50px;
     font-size: 25px;
     text-align: center;
-    outline: solid yellow;
+    outline: solid #FFC93C;
     user-select: none;
 }
 
@@ -99,7 +99,7 @@ body {
     margin-right: auto;
     width: 300px;
     height: 80px;
-    background-color: #59D5E0;
+    background-color: #ffffff;
     border-radius: 16px;
     border-width: 0 0 4.5px 0;
     box-sizing: border-box;
@@ -295,5 +295,4 @@ body {
     .answer {
         margin-top: 10%;
     }
-
 }
