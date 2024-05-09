@@ -4,7 +4,7 @@
 
 /* BODY */
 body {
-  background-color:rgb(3, 11, 43);
+  background-color: #114250;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size:contain;
@@ -28,6 +28,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
+  outline: solid 3px;
 }
 
 .avatar {
@@ -35,7 +36,7 @@ body {
   height: 70px;
   border-radius: 50%;
   overflow: hidden;
-  background-color:#ffe600;
+  background-color:#888888;
   cursor: pointer;
 }
 
@@ -71,6 +72,7 @@ body {
   display: flex;
   align-items: center;
   gap: 15px;
+  outline: solid 3px;
 }
 
 .money-icon {
@@ -137,7 +139,8 @@ body {
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(1px);
+  border-radius: 200px;
 }
 
 .next { 
@@ -165,7 +168,7 @@ body {
   margin-left: -42%;
   width: 300px;
   height: 80px;
-  background-color: #59D5E0;
+  background-color: #FFC93C;
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   color:black;
@@ -221,7 +224,7 @@ body {
   margin-bottom: 20px;
   width: 550px;
   height: 80px;
-  background-color: #59D5E0;
+  background-color: #FFC93C;
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   box-sizing: border-box;

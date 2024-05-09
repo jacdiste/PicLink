@@ -4,16 +4,16 @@
 
 body {
   margin: 0;
-  background-color: rgb(4, 16, 63);
+  background-color: #114250;
 }
 
 .sup{
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  background-color: rgb(3, 11, 43);
-  border-bottom: solid black 5px;
-  margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0a262e;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #back {
@@ -45,7 +45,7 @@ body {
 .bottone {
   width: 145px;
   height: 145px;
-  background-color:#ffcf0f;
+  background-color: #FFC93C;
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   box-sizing: border-box;

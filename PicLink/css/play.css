@@ -24,14 +24,14 @@ body {
 
 #numero-livello {
     margin:auto;
-    color:white;
+    color: white;
     font-size: 60px;
 }
 
 #gobackhome {
     width: 4%;
     margin-right: 0.5%;
-    fill:white;
+    fill: white;
     cursor: pointer;
 }
 
