@@ -14,7 +14,24 @@ else {
 <body>
     <?php
         if ($conn) {
-            
+            $username = $_POST['username'];
+            $q1 = "select * from Utenti where username=$1";
+            $res = pg_query_params($conn, $q1, array($username));
+            if (!$res) {
+                echo "<h1> Nome utente già esistente</h1>
+                      <a href=../html/login.html> Clicca qui per accedere</a>";
+            }
+            else{
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                $q2 = "insert into Utenti values ($1, $2, $3)";
+                $data = pg_query_params($conn, $q2, array($username, $email, $password));
+                if($data)
+                {
+                    echo "<h1> Registrazione avvenuta con successo</h1>
+                          <a href=../html/login.html> Clicca qui per accedere</a>";
+                }
+            }
         }
     ?>
 </body>
