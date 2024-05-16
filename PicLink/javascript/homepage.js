@@ -5,7 +5,7 @@ bottoni.addEventListener("click",(event) => {
         window.location="./html/login.html";
     }
     else if (event.target.name=="Registration") {
-        window.location="./html/registration.html";
+        window.location="./html/register.html";
     }
     else {
         return;
