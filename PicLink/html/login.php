@@ -37,6 +37,7 @@
     </script> 
 </head>
 <body>
+    
     <div class="wrapper">
         <form action="../php/validate_login.php" method="post">
             <h1>Login</h1>
@@ -60,18 +61,24 @@
 
             <script src="../javascript/login&register.js"></script>
 
-            <?php if(isset($_GET['error'])) {
-                echo "<div class='error'>
-                    <?php echo $_GET['error']; 
-                    ?>
-                </div>"
-            } ?>
-
-            <button type="submit" class="button">Accedi</button>
-            
-            <div class="registration-link">
-                <p>Non hai un account? <a href="./register.php">Registrati</a></p>
-            </div>
+            <?php 
+                if(isset($_GET['error'])) {
+                    echo "<div class='error'>";
+                    echo "<span>";
+                    echo $_GET['error'];
+                    echo "</span>"; 
+                    if (isset($_GET['linka'])) {
+                        echo "<a href=./register.php> Clicca qui per registrarti </a>";
+                    }
+                    echo "</div>";
+                }
+                echo '<button type="submit" class="button">Accedi</button>'; 
+                if (!isset($_GET['error'])) {
+                    echo '<div class="registration-link">
+                            <p>Non hai un account? <a href="./register.php">Registrati</a></p>
+                        </div> ';
+                }
+            ?>
         </form>
     </div>
 </body>
