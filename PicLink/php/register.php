@@ -17,13 +17,13 @@ else {
             $username = $_POST['username'];
             $q1 = "select * from utenti where username=$1";
             $res = pg_query_params($conn, $q1, array($username));
-            if (!$res) {
+            if ($tuple = pg_fetch_assoc($res, null, PGSQL_ASSOC)) {
                 echo "<h1> Nome utente già esistente</h1>
                       <a href=../html/login.html> Clicca qui per accedere</a>";
             }
             else{
                 $email = $_POST['email'];
-                $password = $_POST['password'];
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $q2 = "insert into utenti values ($1, $2, $3)";
                 $data = pg_query_params($conn, $q2, array($username, $email, $password));
                 if($data)
