@@ -20,15 +20,16 @@ else {
             $email = $_POST["email"];
             $q1 = "select * from utenti where email = $1";
             $res = pg_query_params($conn, $q1, array($email));
-            if (!($tuple = pg_fetch_assoc($res, null, PGSQL_ASSOC))) {
+            if (!($tuple = pg_fetch_assoc($res))) {
                 echo "<h1> Email non esistente </h1>
                     <a href=../html/register.html> Clicca qui per registrarti </a>";
             }
             else {
-                $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
-                $q2 = "select * from utenti where email = $1 and password = $2";
-                $res = pg_query_params($conn, $q2, array($email, $password));
-                if (!($tuple = pg_fetch_assoc($res, null, PGSQL_ASSOC))) {
+                $q2 = "select * from utenti where email = $1";
+                $res2 = pg_query_params($conn, $q2, array($email));
+                $tuple = pg_fetch_assoc($res2);
+                $hashed_password = $tuple['password'];
+                if (!password_verify($_POST["password"], $hashed_password)) {
                     echo "<h1> La password è sbagliata! </h1>
                         <a href = ../html/login.html> Clicca qui per loggarti </a>";
                 }
