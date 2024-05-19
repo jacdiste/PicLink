@@ -1,5 +1,11 @@
-CREATE TABLE Utenti(
-	username varchar(50) UNIQUE NOT NULL,
-	email varchar(200) UNIQUE NOT NULL,
-	password varchar(255) NOT NULL
-)
+CREATE TABLE public.utenti
+(
+    username character varying(50) NOT NULL,
+    email character varying(200) NOT NULL,
+    password character varying(255) NOT NULL,
+    money integer NOT NULL DEFAULT 0,
+    "tema animali" boolean[12] NOT NULL DEFAULT '{false, false, false, false, false, false, false, false, false, false, false, false}', 
+    "tema arte" boolean[12] NOT NULL DEFAULT '{false, false, false, false, false, false, false, false, false, false, false, false}',
+    "tema anime" boolean[12] NOT NULL DEFAULT '{false, false, false, false, false, false, false, false, false, false, false, false}',
+    PRIMARY KEY (username, email)
+);

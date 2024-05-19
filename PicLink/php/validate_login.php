@@ -17,7 +17,7 @@ if($conn) {
             header("Location: ../html/login.php?error=Password errata");
         }
         else {
-            echo "<a href=../html/gamemode.html> Clicca qui </a>";
+            echo "<a href=../html/gamemode.php> Clicca qui </a>";
         }
     }
 }
