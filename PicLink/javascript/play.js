@@ -6,6 +6,7 @@ var level = parametriGET[1].split("=")[1];
 console.log(tema);
 console.log(level);
 
+var numliv= document.getElementById("numero-livello").innerText="LIVELLO "+level;
 const foto = document.getElementsByClassName("foto");
 
 for (let i=0; i<foto.length; i++) {
