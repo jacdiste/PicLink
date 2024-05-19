@@ -1,5 +1,7 @@
 //slideshow temi
 let themeIndex = 1;
+let temi = [ "animali", "arte", "anime"];
+let tema= temi[0];
 showThemes(themeIndex);
     
 // Next/previous controls
@@ -20,6 +22,7 @@ function showThemes(n) {
   for (i = 0; i < themes.length; i++) {
     themes[i].style.display = "none";
   }
+  tema = temi[themeIndex-1];
   themes[themeIndex-1].style.display = "block";
 }
 
@@ -30,4 +33,8 @@ function toggleDropdown() {
   } else {
       dropdown.style.display = "none";
   }
+}
+
+function gioca() {
+  window.location = "./levels.html?tema="+tema;
 }
