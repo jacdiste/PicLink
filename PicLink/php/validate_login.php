@@ -27,7 +27,7 @@ if($conn) {
             $money = $tuple['money'];
             $_SESSION["money"] = $money;
 
-            echo "<a href=../html/gamemode.php> Clicca qui </a>";
+            header("Location: ../html/gamemode.php");
         }
     }
 }
