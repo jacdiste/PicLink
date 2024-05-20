@@ -17,6 +17,16 @@ if($conn) {
             header("Location: ../html/login.php?error=Password errata");
         }
         else {
+            session_start();
+
+            //salvo l'username in una variabile superglobale di sessione
+            $username = $tuple['username'];
+            $_SESSION["username"] = $username;
+
+            //trovo il numero di monete relative all'utente e salvo il dato in un'altra variabile superglobale di sessione
+            $money = $tuple['money'];
+            $_SESSION["money"] = $money;
+
             echo "<a href=../html/gamemode.php> Clicca qui </a>";
         }
     }
