@@ -18,24 +18,21 @@ else {
             $q1 = "select * from utenti where username=$1";
             $res = pg_query_params($conn, $q1, array($username));
             if ($tuple = pg_fetch_assoc($res)) {
-                echo "<h1> Nome utente già esistente</h1>
-                      <a href=../html/login.php> Clicca qui per accedere</a>";
+                header("Location: ../html/register.php?error1=Nome utente già in uso");
             }
             else{
                 $email = $_POST['email'];
                 $q2 = "select * from utenti where email=$1";
                 $res2 = pg_query_params($conn, $q2, array($email));
                 if ($tuple = pg_fetch_assoc($res2)) {
-                    echo "<h1> Email già esistente</h1>
-                         <a href=../html/login.php> Clicca qui per accedere</a>";
+                    header("Location: ../html/register.php?error2=Email già in uso");
                 }
                 else{
                     $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
                     $q3 = "insert into utenti(username, email, password) values ($1, $2, $3)";
                     $data = pg_query_params($conn, $q3, array($username, $email, $password));
                     if($data){
-                        echo "<h1> Registrazione avvenuta con successo</h1>
-                              <a href=../html/login.php> Clicca qui per accedere</a>";
+                        header("Location: ../html/register.php?success=1");
                     }
                 }
             }

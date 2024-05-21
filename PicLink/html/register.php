@@ -68,6 +68,30 @@
 
             <script src="../javascript/login&register.js"></script>
 
+            <?php 
+                if(isset($_GET['error1'])) {
+                    echo "<div class='error'>";
+                    echo "<span>";
+                    echo $_GET['error1'] . ".";
+                    echo "</span>"; 
+                    echo "</div>";
+                }
+                if(isset($_GET['error2'])) {
+                    echo "<div class='error'>";
+                    echo "<span>";
+                    echo $_GET['error2'] . ".";
+                    echo "</span>"; 
+                    echo "</div>";
+                }
+                if(isset($_GET['success'])) {
+                    echo "<div class='success'>";
+                    echo "<span>";
+                    echo "Registrazione avvenuta con successo" . ".";
+                    echo "</span>"; 
+                    echo "</div>";
+                }
+            ?>
+
             <button type="submit" class="button">Registrati</button>
             
             <div class="registration-link">
