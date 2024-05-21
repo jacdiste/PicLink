@@ -1,7 +1,7 @@
 //slideshow temi
 let themeIndex = 1;
-let temi = [ "animali", "arte", "anime"];
-let tema= temi[0];
+var temi = [ "animali", "arte", "anime"];
+var tema= temi[0];
 showThemes(themeIndex);
     
 // Next/previous controls
