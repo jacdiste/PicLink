@@ -41,13 +41,14 @@ function togglePopup() {
             sol = json[tema][level-1];
 
             var answer = document.getElementById('answer-input').value.toUpperCase();
+            
             const overlay = document.getElementById('popupOverlay');
 
             if (parseInt(level) == 12) {
                 document.getElementById('prossimolvl').disabled = true;
             }
         
-            if(answer==sol) {
+            if (sol.includes(answer)) {
                 overlay.classList.toggle('show'); 
             }
             else {
