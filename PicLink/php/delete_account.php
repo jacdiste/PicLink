@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if ( $_SERVER["REQUEST_METHOD"] != "POST") {
     header("Location: ../index.html");
@@ -14,21 +13,32 @@ else {
 <head></head>
 <body>
     <?php
+        session_start();
         $username = $_SESSION['username'];
-        $query = "DELETE FROM utenti WHERE username=$1";
-        if(pg_query_params($conn, $query, array($username))==true){
-            echo "<h1> Eliminazione avvenuta con successo</h1>
-                  <a href=../index.html> Clicca qui per tornare all'homepage</a>";
+        $q1 = "select * from utenti where username = $1";
+        $res1 = pg_query_params($conn, $q1, array($username));
+        $tuple = pg_fetch_assoc($res1);
+        $hashed_password = $tuple['password'];
+        if (!password_verify($_POST['password'], $hashed_password)) {
+            echo "<script>
+                  alert('Password errata');
+                  </script>";
         }
-        else{
-            echo "Eliminazione non avvenuta";
+        else {
+            $q2 = "DELETE FROM utenti WHERE username=$1";
+            if(pg_query_params($conn, $q2, array($username))==true){
+                header("Location: ../index.html");
+                echo "<script>
+                      alert('Eliminazione avvenuta con successo');
+                      </script>";
+
+            }
         }
 
         pg_close($conn);
 
         session_destroy();
 
-        //header("Location: ../index.html");
         exit();
     ?>
 </body>
