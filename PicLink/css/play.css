@@ -181,13 +181,24 @@ body {
     user-select: none;
   }
   
-.bottonepopup:hover {
+.bottonepopup:enabled:hover {
     filter: brightness(1.1);
 }
   
-.bottonepopup:active {
+.bottonepopup:enabled:active {
     border-width: 0 0 0 0;
     transform:translateY(4px);
+}
+
+.bottonepopup:disabled {
+    background-color: #cccccc;
+    border: 1px solid #999999;
+    color: #666666;
+    cursor: default;
+}
+
+.bottonepopup:disabled:hover {
+    filter: none;
 }
 
 #titolopopup{
