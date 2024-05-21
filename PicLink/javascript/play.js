@@ -39,8 +39,8 @@ function togglePopup() {
         if (this.readyState == 4 && this.status == 200) {
             var json = JSON.parse(xhr.responseText);
             sol = json[tema][level-1];
-
-            var answer = document.getElementById('answer-input').value.toUpperCase();
+            var input = document.getElementById ("answer-input");
+            var answer = input.value.toUpperCase();
             
             const overlay = document.getElementById('popupOverlay');
 
@@ -52,7 +52,12 @@ function togglePopup() {
                 overlay.classList.toggle('show'); 
             }
             else {
-                alert("Si na latrin");
+                input.classList.add("apply-shake");
+                input.value = "";
+                
+                input.addEventListener("animationend", () => {
+                    input.classList.remove("apply-shake");
+                });
             }
         }
     }
