@@ -313,11 +313,10 @@ body {
 }
 
 .input-box{
+  display: block;
+  margin-left: 28px;
   margin-top: 8%;
-  margin-bottom: 2%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-bottom: 3%;
 }
 
 .input-box input {
@@ -325,8 +324,20 @@ body {
   height: 40px;
   outline:none;
   border-radius:40px;
-  font-size: 20px;
-  text-align: center;
+  font-size: 16px;
+  padding-left: 16px;
+}
+
+#lock{
+  position: relative;
+  top: 3px;
+  right: 35px;
+}
+
+#unlock{
+  position: relative;
+  top: 3px;
+  right: 35px;
 }
 
 @keyframes fadeInUp { 
@@ -431,6 +442,14 @@ body {
   #titolopopup {
     font-size: 30px;
   }
+
+  #lock{
+    margin-left: 5px;
+  }
+  
+  #unlock{
+    margin-left: 5px;
+  }
 }
 
 @media screen and (min-width: 600px) and (max-width: 1300px){
@@ -455,7 +474,6 @@ body {
     font-size: 30px;
   }
 }
-  
 
 
  

@@ -15,7 +15,7 @@ if($conn){
     $tuple = pg_fetch_assoc($res1);
     $hashed_password = $tuple['password'];
     if (!password_verify($_POST["password"], $hashed_password)) {
-
+        header("Location: ../html/gamemode.php");
     }
     else {
         $q2 = "DELETE FROM utenti WHERE username=$1";

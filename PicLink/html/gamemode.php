@@ -115,9 +115,6 @@
         <a class="next" onclick="plusThemes(1)">&#10095;</a>
     </div>
 
-
-
-
     <div class="dropdown">
             <form action="../php/logout.php" method="post">
                 <button class="bottone" type="submit">Disconnetti</button>
@@ -132,16 +129,19 @@
                 <form action="../php/delete_account.php" method="post">
                     <div class="input-box">
                         <input id="password" type="password" name="password" placeholder="Password" required />
-                    </div>
+                            <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer" onclick="myFunction()">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                            </svg>
 
+                            <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer" onclick="myFunction()">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+                            </svg>
+                    </div>
                     <button class="bottonepopup" type="submit">Conferma</button>
                     <button class="bottonepopup" onclick="togglePopup()">Indietro</button>    
                 </form>        
             </div> 
         </div>
-
-
-
         
     <div id="play">       
         <button class="bottone" name="gioca" onclick="gioca()">GIOCA</button>
