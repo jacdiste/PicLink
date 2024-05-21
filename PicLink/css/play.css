@@ -45,6 +45,7 @@ body {
     overflow-y: hidden;
     outline: solid 4px #ff0000;
     user-select: none;
+    position: relative;
 }
 
 .foto {
@@ -157,7 +158,7 @@ body {
     height: 60%;
     text-align: center; 
     align-items: center;
-    animation: fadeInUp 0.5s ease-out forwards; 
+    animation: fadeInUp 0.5s ease-out; 
 } 
 
 .bottonepopup{
@@ -230,6 +231,54 @@ body {
 .overlay-container.show { 
     display: flex; 
     opacity: 1; 
+}
+
+/* TIMER */
+.timer {
+    left: 24%;
+    top: 5.7%;
+    position: absolute;
+    height: 85.7%;
+    width: 50%;
+}
+
+.timer-inside {
+    fill: none;
+    stroke: none;
+}
+
+.timer-circle {
+    stroke-width: 5px;
+    stroke: green;
+}
+
+#timercircle1 {
+    stroke-dasharray: 300px;
+    animation: anim 10s linear forwards;
+}
+#timercircle2 {
+    stroke-dasharray: 300px;
+    animation: anim 20s linear forwards;
+}
+#timercircle3 {
+    stroke-dasharray: 300px;
+    animation: anim 30s linear forwards;
+}
+
+@keyframes anim {
+    0% {
+        stroke-dashoffset: 0px;
+    }
+    60% {
+        stroke: yellow;
+    }
+    90% {
+        stroke: red;
+    }   
+    100% {
+        stroke: red;
+        stroke-dashoffset: 300px;
+    }
 }
 
 /*SHAKING ANIMATION */
