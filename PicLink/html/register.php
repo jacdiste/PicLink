@@ -75,6 +75,21 @@
                     echo $_GET['error1'] . ".";
                     echo "</span>"; 
                     echo "</div>";
+                    echo "<style>
+                          .button{
+                            display: none;
+                          }
+                          .registration-link{
+                            color: red;
+                          }
+                          .registration-link p a{
+                            color: red;
+                          }
+                          </style>";
+                    echo '<script>
+                          console.log(document.getElementById("p"));
+                          document.getElementById("p").style.display = "none";
+                          </script>';
                 }
                 if(isset($_GET['error2'])) {
                     echo "<div class='error'>";
@@ -95,7 +110,7 @@
             <button type="submit" class="button">Registrati</button>
             
             <div class="registration-link">
-                <p>Hai già un account? <a href="./login.php">Accedi</a></p>
+                <p id="p">Hai già un account? <a href="./login.php">Accedi</a></p>
             </div>
         </form>
     </div>
