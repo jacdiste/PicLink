@@ -86,10 +86,6 @@
                             color: red;
                           }
                           </style>";
-                    echo '<script>
-                          console.log(document.getElementById("p"));
-                          document.getElementById("p").style.display = "none";
-                          </script>';
                 }
                 if(isset($_GET['error2'])) {
                     echo "<div class='error'>";
