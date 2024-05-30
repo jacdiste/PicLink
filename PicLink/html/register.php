@@ -75,31 +75,43 @@
                     echo $_GET['error1'] . ".";
                     echo "</span>"; 
                     echo "</div>";
-                    echo "<style>
-                          .button{
-                            display: none;
-                          }
-                          .registration-link{
-                            color: red;
-                          }
-                          .registration-link p a{
-                            color: red;
-                          }
-                          </style>";
                 }
                 if(isset($_GET['error2'])) {
                     echo "<div class='error'>";
                     echo "<span>";
                     echo $_GET['error2'] . ".";
+                    echo "<br><br>";
+                    echo "Clicca <a href='./login.php'>qui</a> per accedere.";
                     echo "</span>"; 
                     echo "</div>";
+                    echo "<style>
+                          .button{
+                            display: none;
+                          }
+                          .registration-link{
+                            display: none;
+                          }
+                          </style>";
                 }
                 if(isset($_GET['success'])) {
                     echo "<div class='success'>";
                     echo "<span>";
                     echo "Registrazione avvenuta con successo" . ".";
+                    echo "<br><br>";
+                    echo "Clicca <a href='./login.php'>qui</a> per accedere.";
                     echo "</span>"; 
                     echo "</div>";
+                    echo "<style>
+                          .button{
+                            display: none;
+                          }
+                          .registration-link{
+                            display: none;
+                          }
+                          .success a{
+                            color: green;
+                          }
+                          </style>";
                 }
             ?>
 
