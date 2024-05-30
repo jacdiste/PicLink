@@ -63,13 +63,24 @@ body {
   transition: .2s;
 }
 
-.bottone:hover{
+.bottone:enabled:hover{
   filter: brightness(1.2);
 }
 
-.bottone:active{
+.bottone:enabled:active{
   border-width: 0 0 0 0;
   transform:translateY(4px);
+}
+
+.bottone:disabled {
+  background-color: #cccccc;
+  border: 1px solid #999999;
+  color: #666666;
+  cursor: default;
+}
+
+.bottone:disabled:hover {
+  filter: none;
 }
 
 

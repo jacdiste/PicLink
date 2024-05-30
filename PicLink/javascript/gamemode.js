@@ -36,7 +36,7 @@ function toggleDropdown() {
 }
 
 function gioca() {
-  window.location = "./levels.html?tema="+tema;
+  window.location = "./levels.php?tema="+tema;
 }
 
 function togglePopup() { 

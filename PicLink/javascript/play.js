@@ -72,6 +72,7 @@ for (let i=1; i<images.length; i++) {
     }
 }
 let timer = null;
+let primo = false, secondo = false, terzo = false;
 startTimer();
 
 function startTimer() {
@@ -84,6 +85,7 @@ function startTimer() {
         else {
             document.getElementById("timer1").style.display = "none";
             images[1].style.visibility = "visible";
+            primo = true;
         }
 
         if(timeLeft2>0) {
@@ -94,6 +96,7 @@ function startTimer() {
         else {
             document.getElementById("timer2").style.display = "none";
             images[2].style.visibility = "visible";
+            secondo = true;
         }
 
         if(timeLeft3>0) {
@@ -104,6 +107,7 @@ function startTimer() {
         else {
             document.getElementById("timer3").style.display = "none";
             images[3].style.visibility = "visible";
+            terzo = true;
             return;
         }
 
@@ -114,7 +118,7 @@ function startTimer() {
 const back = document.getElementById("back");
 
 back.addEventListener("click", () => {
-    window.location = "./levels.html?tema="+tema;
+    window.location = "./levels.php?tema="+tema;
 });
 
 function togglePopup() {
@@ -135,7 +139,38 @@ function togglePopup() {
             }
         
             if (sol.includes(answer)) {
-                overlay.classList.toggle('show'); 
+                var xhr2 = new XMLHttpRequest(); 
+                let post= "monete=";
+                
+                if (primo==false) {
+                    document.getElementById("monetepopup").innerText= "Hai guadagnato 40 monete!";
+                    post += "40";
+                }
+                else if (secondo == false) {
+                    document.getElementById("monetepopup").innerText= "Hai guadagnato 20 monete!";
+                    post += "20";
+                }
+                else if (terzo == false) {
+                    document.getElementById("monetepopup").innerText= "Hai guadagnato 10 monete!";
+                    post += "10";
+                }
+                else {
+                    document.getElementById("monetepopup").innerText= "Hai guadagnato 5 monete!";
+                    post += "5";
+                }
+                
+                post += "&tema="+tema+"&livello="+level;
+
+                xhr2.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        overlay.classList.toggle('show');
+                    }
+                }
+                
+                xhr2.open("POST","../html/play.php",true);
+                xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr2.send(post);
             }
             else {
                 input.classList.add("apply-shake");
@@ -153,5 +188,5 @@ function togglePopup() {
 }
 
 function next () {
-    window.location = "./play.html?tema="+tema+"&level=" + (parseInt(level)+1);
+    window.location = "./play.php?tema="+tema+"&level=" + (parseInt(level)+1);
 }
