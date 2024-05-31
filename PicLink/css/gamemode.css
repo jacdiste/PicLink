@@ -185,13 +185,24 @@ body {
   transition: .2s;
 }
 
-.bottone-sblocca:hover {
+.bottone-sblocca:enabled:hover {
   filter: brightness(1.1);
 }
 
-.bottone-sblocca:active {
+.bottone-sblocca:enabled:active {
   border-width: 0 0 0 0;
   transform:translateY(4px);
+}
+
+.bottone-sblocca:disabled {
+  background-color: #cccccc;
+  border: 1px solid #999999;
+  color: #666666;
+  cursor: default;
+}
+
+.bottone-sblocca:disabled:hover {
+  filter: none;
 }
 
 #money-block {

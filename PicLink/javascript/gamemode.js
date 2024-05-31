@@ -5,9 +5,13 @@ xhr.onreadystatechange = function() {
   
     var data = JSON.parse(this.responseText);
 
+    document.getElementById("user").innerText = data["username"];
+    document.getElementById("money").innerText=data["money"];
+
     //slideshow temi
     let themeIndex = 1;
     var temi = [ "animali", "arte", "anime"];
+    var prezzo = [0, 200, 400];
     var tema= temi[0];
     showThemes(themeIndex);
 
@@ -26,6 +30,7 @@ xhr.onreadystatechange = function() {
     var indietro_cancellaaccount = document.getElementById("indietro_cancellaaccount");
     var lock = document.getElementById("lock");
     var unlock = document.getElementById("unlock");
+    var sblocca = document.getElementsByClassName("bottone-sblocca");
 
     avatar.addEventListener("click", () => {
       toggleDropdown();
@@ -61,6 +66,13 @@ xhr.onreadystatechange = function() {
       myFunction();
     });
 
+    
+    for (let i=0; i<sblocca.length; i++) {
+      sblocca[i].addEventListener("click", (event) => {
+        
+      });
+    }
+
     // Next/previous controls
     function plusThemes(n) {
       showThemes(themeIndex += n);
@@ -83,9 +95,11 @@ xhr.onreadystatechange = function() {
 
       if (data[tema] == "f" ) {
         document.getElementById("gioca").disabled = true;
-        
+        if ((parseInt(data["money"])) < prezzo[themeIndex-1]) {
+          document.getElementById("span-"+tema).innerText = "Non hai abbastanza monete";
+          document.getElementById("bottone-sblocca-"+tema).disabled = true;
+        }
       }
-
       else {
         document.getElementById("sblocca-"+tema).style.display = "none";
         document.getElementById("gioca").disabled = false;
