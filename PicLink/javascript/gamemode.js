@@ -1,15 +1,3 @@
-function togglePopup() { 
-  const overlay = document.getElementById('popupOverlay'); 
-  overlay.classList.toggle('show'); 
-}
-
-var parametroGET = window.location.search.substring(1);
-parametroGET = parametroGET.split('=')[0];
-console.log(parametroGET);
-if(parametroGET=='error'){
-  togglePopup();
-}
-
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
@@ -22,6 +10,13 @@ xhr.onreadystatechange = function() {
     var temi = [ "animali", "arte", "anime"];
     var tema= temi[0];
     showThemes(themeIndex);
+
+    var parametroGET = window.location.search.substring(1); 
+    parametroGET = parametroGET.split('=')[0];
+    console.log(parametroGET);
+    if(parametroGET=='error'){
+      togglePopup();
+    }
 
     var avatar = document.getElementById("avatar");
     var prev = document.getElementById("prev");
@@ -55,6 +50,7 @@ xhr.onreadystatechange = function() {
 
     indietro_cancellaaccount.addEventListener("click", () => {
       togglePopup();
+      window.location = "./gamemode.php";
     });
 
     lock.addEventListener("click", () => {
@@ -87,6 +83,7 @@ xhr.onreadystatechange = function() {
 
       if (data[tema] == "f" ) {
         document.getElementById("gioca").disabled = true;
+        
       }
 
       else {
@@ -104,7 +101,12 @@ xhr.onreadystatechange = function() {
       } else {
           dropdown.style.display = "none";
       }
-    } 
+    }
+    
+    function togglePopup() { 
+      const overlay = document.getElementById('popupOverlay'); 
+      overlay.classList.toggle('show'); 
+    }
 
     function myFunction() {
       var password = document.getElementById("password");
