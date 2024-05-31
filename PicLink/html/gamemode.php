@@ -1,4 +1,6 @@
-
+<?php 
+    session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="it">
@@ -19,12 +21,12 @@
                     <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                 </svg>
             </div>
-                <span class="username" id="user"> </span>
-        </div>
+                <span class="username" id="user"></span>
+            </div>
 
         <div id="money-container">
             <span id="money"> </span>
-            
+                        
             <div class="money-icon"> 
                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-coin" viewBox="0 0 16 16">
                     <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
@@ -42,7 +44,7 @@
                 <source media="(max-width:599px)" srcset="../foto/immagini-temi/animali-telefono.png" /> 
                 <source media="(min-width:600px) and (max-width:1300px)" srcset="../foto/immagini-temi/animali-tablet.png" />
                 <source media="(min-width:1299px)" srcset="../foto/immagini-temi/animali.jpg" />
-                <img class="foto-tema animali" src="../foto/immagini-temi/animali.jpg" />
+                <img class="foto-tema animali" id="fotoanimali" src="../foto/immagini-temi/animali.jpg" />
             </picture> 
 
             <div class="theme-block" id="sblocca-animali">
@@ -71,7 +73,7 @@
                 <source media="(max-width:599px)" srcset="../foto/immagini-temi/arte-telefono.png" />
                 <source media="(min-width:600px) and (max-width:1300px)" srcset="../foto/immagini-temi/arte-tablet.png" />
                 <source media="(min-width:1299px)" srcset="../foto/immagini-temi/arte.jpg" />
-                <img class="foto-tema arte" src="../foto/immagini-temi/arte.jpg" />
+                <img class="foto-tema arte" id="fotoarte" src="../foto/immagini-temi/arte.jpg" />
             </picture> 
 
             <div class="theme-block" id="sblocca-arte">
@@ -100,7 +102,7 @@
                 <source media="(max-width:599px)" srcset="../foto/immagini-temi/anime-telefono.png" /> 
                 <source media="(min-width:600px) and (max-width:1300px)" srcset="../foto/immagini-temi/anime-tablet.png" />
                 <source media="(min-width:1299px)" srcset="../foto/immagini-temi/anime.jpg" />
-                <img class="foto-tema anime" src="../foto/immagini-temi/anime.jpg" />
+                <img class="foto-tema anime" id="fotoanime" src="../foto/immagini-temi/anime.jpg" />
             </picture> 
 
             <div class="theme-block" id="sblocca-anime">

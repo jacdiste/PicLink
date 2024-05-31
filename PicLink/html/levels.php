@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="sup">
-        <img id="back" src="../foto/freccia-sinistra.png" onclick="window.location='./gamemode.php'"/>
+        <img id="back" src="../foto/freccia-sinistra.png"/>
         <span id="titolo">SCEGLI IL LIVELLO</span>
     </div>
      

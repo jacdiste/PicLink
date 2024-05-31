@@ -6,18 +6,22 @@ xhr.onreadystatechange = function() {
     var data = JSON.parse(this.responseText);
 
     document.getElementById("user").innerText = data["username"];
-    document.getElementById("money").innerText=data["money"];
+    document.getElementById("money").innerText = data["money"];
 
     //slideshow temi
-    let themeIndex = 1;
     var temi = [ "animali", "arte", "anime"];
     var prezzo = [0, 200, 400];
-    var tema= temi[0];
+    var tema= location.search.substring(1).split("=")[1];
+    
+    if (tema == "animali") themeIndex = 1;
+    else if (tema == "arte") themeIndex = 2;
+    else if (tema == "anime") themeIndex = 3;
+
     showThemes(themeIndex);
 
     var parametroGET = window.location.search.substring(1); 
     parametroGET = parametroGET.split('=')[0];
-    console.log(parametroGET);
+
     if(parametroGET=='error'){
       togglePopup();
     }
@@ -38,10 +42,12 @@ xhr.onreadystatechange = function() {
 
     prev.addEventListener("click", () => {
       plusThemes(-1);
+      location = "./gamemode.php?tema="+tema;
     });
 
     next.addEventListener("click", () => {
       plusThemes(1);
+      location = "./gamemode.php?tema="+tema;
     });
 
     gioca.addEventListener("click", () => {
@@ -69,7 +75,21 @@ xhr.onreadystatechange = function() {
     
     for (let i=0; i<sblocca.length; i++) {
       sblocca[i].addEventListener("click", (event) => {
-        
+        var xhr2 = new XMLHttpRequest();
+        var post = "costo="+prezzo[i]+"&tema="+tema;
+
+        xhr2.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("sblocca-"+tema).style.display = "none";
+            document.getElementById("gioca").disabled = false;
+            document.getElementById("foto"+tema).style.filter = "brightness(0.9)";
+            window.location = "./gamemode.php?tema="+tema;
+          }
+        }
+
+        xhr2.open("POST","../php/sblocca.php",true);
+        xhr2.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr2.send(post);
       });
     }
 
@@ -103,6 +123,7 @@ xhr.onreadystatechange = function() {
       else {
         document.getElementById("sblocca-"+tema).style.display = "none";
         document.getElementById("gioca").disabled = false;
+        document.getElementById("foto"+tema).style.filter = "brightness(0.9)";
       }
 
       themes[themeIndex-1].style.display = "block";

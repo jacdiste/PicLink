@@ -5,6 +5,7 @@ parametriGET = parametriGET.split("&");
 var tema = parametriGET[0].split("=")[1];
 var level = parametriGET[1].split("=")[1];
 
+
 var numliv= document.getElementById("numero-livello").innerText="LIVELLO "+level;
 
 var images = document.getElementsByClassName("foto");
@@ -117,9 +118,14 @@ function startTimer() {
 
 
 const back = document.getElementById("back");
+const gobackhome = document.getElementById("gobackhome");
 
 back.addEventListener("click", () => {
     window.location = "./levels.php?tema="+tema;
+});
+
+gobackhome.addEventListener("click", () => {
+    window.location = "./gamemode.php?tema="+tema
 });
 
 function togglePopup() {

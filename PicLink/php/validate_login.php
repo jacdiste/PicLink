@@ -27,7 +27,7 @@ if($conn) {
             $money = $tuple['money'];
             $_SESSION["money"] = $money;
 
-            header("Location: ../html/gamemode.php");
+            header("Location: ../html/gamemode.php?tema=animali");
         }
     }
 }

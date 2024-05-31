@@ -13,6 +13,12 @@ xhr.onreadystatechange = function() {
         livelli = livelli.substring(1,livelli.length-1);
         livelli = livelli.split(",");
 
+        var back = document.getElementById("back");
+
+        back.addEventListener("click", () => {
+            window.location = "./gamemode.php?tema="+tema;
+        });
+
         for (let i=0; i<bottoni.length; i++) {
             if (livelli[i] == "t") {
                 bottoni[i].style.backgroundColor = "grey";
