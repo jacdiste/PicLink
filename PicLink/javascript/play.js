@@ -163,7 +163,6 @@ function togglePopup() {
 
                 xhr2.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
-
                         overlay.classList.toggle('show');
                     }
                 }
