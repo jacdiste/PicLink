@@ -9,34 +9,55 @@
    <script>
         var images = [];
         var slideTime = 3000;
-        images[0] = '../foto/immagini-registrazione/acqua.png';
-        images[1] = '../foto/immagini-registrazione/aereo.png';
-        images[2] = '../foto/immagini-registrazione/auto.png';
-        images[3] = '../foto/immagini-registrazione/avocado.png';
-        images[4] = '../foto/immagini-registrazione/bimbi.png';
-        images[5] = '../foto/immagini-registrazione/cane.png';
-        images[6] = '../foto/immagini-registrazione/elefante.png';
-        images[7] = '../foto/immagini-registrazione/fiori.png';
-        images[8] = '../foto/immagini-registrazione/gatto.png';
-        images[9] = '../foto/immagini-registrazione/mare.png';
-        images[10] = '../foto/immagini-registrazione/monte.png';
-        images[11] = '../foto/immagini-registrazione/panino.png';
-        images[12] = '../foto/immagini-registrazione/sprechi.png';
-        images[13] = '../foto/immagini-registrazione/statua.png';
-        var i = Math.floor(Math.random() * (images.length-1)); 
+        images[0] = '../foto/immagini-homepage/acqua.png';
+        images[1] = '../foto/immagini-homepage/aereo.png';
+        images[2] = '../foto/immagini-homepage/auto.png';
+        images[3] = '../foto/immagini-homepage/avocado.png';
+        images[4] = '../foto/immagini-homepage/bimbi.png';
+        images[5] = '../foto/immagini-homepage/cane.png';
+        images[6] = '../foto/immagini-homepage/elefante.png';
+        images[7] = '../foto/immagini-homepage/fiori.png';
+        images[8] = '../foto/immagini-homepage/gatto.png';
+        images[9] = '../foto/immagini-homepage/mare.png';
+        images[10] = '../foto/immagini-homepage/monte.png';
+        images[11] = '../foto/immagini-homepage/panino.png';
+        images[12] = '../foto/immagini-homepage/sprechi.png';
+        images[13] = '../foto/immagini-homepage/statua.png';
+        var i = Math.floor(Math.random() * images.length); 
+            
         function changePicture() {
-            document.body.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(" + images[i] + ")"
+            var bg1 = document.getElementById('bg1');
+            var bg2 = document.getElementById('bg2');
+            
+            // Alterna l'opacità delle immagini
+            if (bg1.style.opacity == 0 || bg1.style.opacity === "") {
+                bg1.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(" + images[i] + ")";
+                bg1.style.opacity = 1;
+                bg2.style.opacity = 0;
+            } else {
+                bg2.style.backgroundImage = "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(" + images[i] + ")";
+                bg2.style.opacity = 1;
+                bg1.style.opacity = 0;
+            }
+        
+            // Avanza l'indice delle immagini
             if (i < images.length - 1) {
                 i++;
             } else {
                 i = 0;
             }
+        
             setTimeout(changePicture, slideTime);
         }
+        
         window.onload = changePicture;
     </script> 
 </head>
 <body>
+    <div id="background-container">
+        <div class="background-image" id="bg1"></div>
+        <div class="background-image" id="bg2"></div>
+    </div>
     <div class="wrapper">
         <form action="../php/validate_register.php" method="post">
             <h1>Registrazione</h1>
