@@ -29,6 +29,8 @@ xhr.onreadystatechange = function() {
     var gioca = document.getElementById("gioca");
     var cancellaaccount = document.getElementById("cancellaaccount");
     var indietro_cancellaaccount = document.getElementById("indietro_cancellaaccount");
+    var lock = document.getElementById("lock");
+    var unlock = document.getElementById("unlock");
 
     avatar.addEventListener("click", () => {
       toggleDropdown();
@@ -53,6 +55,14 @@ xhr.onreadystatechange = function() {
 
     indietro_cancellaaccount.addEventListener("click", () => {
       togglePopup();
+    });
+
+    lock.addEventListener("click", () => {
+      myFunction();
+    });
+
+    unlock.addEventListener("click", () => {
+      myFunction();
     });
 
     // Next/previous controls
