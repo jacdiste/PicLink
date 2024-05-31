@@ -141,7 +141,14 @@
 
         <div id="popupOverlay" class="overlay-container"> 
             <div class="popup-box"> 
-                <span id="titolopopup">Vuoi veramente eliminare l'account?</span> 
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    }
+                    else{
+                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                    }
+                ?>
                 <form action="../php/delete_account.php" method="post">
                     <div class="input-box">
                         <input id="password" type="password" name="password" placeholder="Password" required />
@@ -160,7 +167,7 @@
         </div>
         
     <div id="play">       
-        <button class="bottone" id= "gioca" name="gioca"">GIOCA</button>
+        <button class="bottone" id= "gioca" name="gioca">GIOCA</button>
     </div>
 
 </body>

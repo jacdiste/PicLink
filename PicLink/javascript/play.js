@@ -1,4 +1,5 @@
 var parametriGET = window.location.search.substring(1);
+console.log(parametriGET);
 parametriGET = parametriGET.split("&");
 
 var tema = parametriGET[0].split("=")[1];

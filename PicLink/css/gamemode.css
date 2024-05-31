@@ -323,6 +323,10 @@ body {
   font-weight: 700;
 }
 
+#titolopopup.error{
+  color: red;
+}
+
 .input-box{
   display: block;
   margin-left: 28px;

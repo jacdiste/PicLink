@@ -1,3 +1,15 @@
+function togglePopup() { 
+  const overlay = document.getElementById('popupOverlay'); 
+  overlay.classList.toggle('show'); 
+}
+
+var parametroGET = window.location.search.substring(1);
+parametroGET = parametroGET.split('=')[0];
+console.log(parametroGET);
+if(parametroGET=='error'){
+  togglePopup();
+}
+
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
@@ -82,11 +94,6 @@ xhr.onreadystatechange = function() {
       } else {
           dropdown.style.display = "none";
       }
-    }
-
-    function togglePopup() { 
-      const overlay = document.getElementById('popupOverlay'); 
-      overlay.classList.toggle('show'); 
     } 
 
     function myFunction() {
