@@ -147,18 +147,30 @@ body {
   right: 0;
 }
 
+.text-box{
+  width: 400px;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  align-self: center;
+  border-radius: 200px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.411);
+}
+
 .text {
   color: #f2f2f2;
-  font-size: 50px;
-  padding: 8px 12px;
-  position:absolute;
-  bottom: 30px;
-  width: 100%;
-  text-align: center;
+  position: relative;
+  font-size: 45px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-style: oblique;
 }
 
 .animal {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .bottone-sblocca {
@@ -234,7 +246,7 @@ body {
   margin-bottom: 20px;
   width: 550px;
   height: 80px;
-  background-color: #FFC93C;
+  background-color: #ffffff;
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   box-sizing: border-box;
@@ -441,6 +453,10 @@ body {
   #money-block {
     margin-top: 0%;
     margin-left:35%;
+  }
+
+  .text-box{
+    width: 300px;
   }
 
   .text {

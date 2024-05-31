@@ -60,8 +60,9 @@
                     </div>
                 </button>
             </div>
-
-            <div class="text animal">Tema animali</div>
+            <div class="text-box">
+                <div class="text animal">Tema animali</div>
+            </div>
         </div>
 
         <div class="theme arte">
@@ -88,8 +89,9 @@
                     </div>
                 </button>
             </div>
-
-            <div class="text">Tema arte</div>
+            <div class="text-box">
+                <div class="text">Tema arte</div>
+            </div>
         </div>
 
         <div class="theme anime">
@@ -116,8 +118,9 @@
                     </div>
                 </button>
             </div>
-
-            <div class="text">Tema anime</div>
+            <div class="text-box">
+                <div class="text">Tema anime</div>
+            </div>
         </div>
 
         <a class="prev" id="prev">&#10094;</a>
