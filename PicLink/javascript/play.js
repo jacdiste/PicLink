@@ -119,6 +119,7 @@ function startTimer() {
 
 const back = document.getElementById("back");
 const gobackhome = document.getElementById("gobackhome");
+const gobackmenu = document.getElementById("tornamenu");
 
 back.addEventListener("click", () => {
     window.location = "./levels.php?tema="+tema;
@@ -126,6 +127,10 @@ back.addEventListener("click", () => {
 
 gobackhome.addEventListener("click", () => {
     window.location = "./gamemode.php?tema="+tema
+});
+
+gobackmenu.addEventListener("click", () => {
+    window.location = "./gamemode.php?tema="+tema;
 });
 
 function togglePopup() {

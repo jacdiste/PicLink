@@ -70,7 +70,7 @@
             <h2 id="titolopopup">HAI INDOVINATO!</h2> 
             <span id="monetepopup">Hai guadagnato N monete!</span>
             <button class="bottonepopup" id="prossimolvl" onclick="next()">Prossimo livello</button> 
-            <button class="bottonepopup" id="tornamenu" onclick="window.location='./gamemode.php'">Torna al menu</button>
+            <button class="bottonepopup" id="tornamenu">Torna al menu</button>
         </div> 
     </div>
 </body>

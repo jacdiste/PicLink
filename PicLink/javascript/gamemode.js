@@ -31,10 +31,13 @@ xhr.onreadystatechange = function() {
     var next = document.getElementById("next");
     var gioca = document.getElementById("gioca");
     var cancellaaccount = document.getElementById("cancellaaccount");
-    var indietro_cancellaaccount = document.getElementById("indietro_cancellaaccount");
+    var indietro_popup = document.getElementById("indietro_popup");
     var lock = document.getElementById("lock");
     var unlock = document.getElementById("unlock");
     var sblocca = document.getElementsByClassName("bottone-sblocca");
+    var cambiausername = document.getElementById("cambiausername");
+    var cambiaemail = document.getElementById("cambiaemail");
+    var cambiapassword = document.getElementById("cambiapassword");
 
     avatar.addEventListener("click", () => {
       toggleDropdown();
@@ -59,9 +62,23 @@ xhr.onreadystatechange = function() {
       toggleDropdown();
     });
 
-    indietro_cancellaaccount.addEventListener("click", () => {
+    indietro_popup.addEventListener("click", () => {
       togglePopup();
-      window.location = "./gamemode.php";
+    });
+
+    cambiausername.addEventListener("click", () => {
+      togglePopup1();
+      toggleDropdown();
+    });
+
+    cambiaemail.addEventListener("click", () => {
+      togglePopup2();
+      toggleDropdown();
+    });
+
+    cambiapassword.addEventListener("click", () => {
+      togglePopup3();
+      toggleDropdown();
     });
 
     lock.addEventListener("click", () => {
@@ -140,6 +157,21 @@ xhr.onreadystatechange = function() {
     
     function togglePopup() { 
       const overlay = document.getElementById('popupOverlay'); 
+      overlay.classList.toggle('show'); 
+    }
+
+    function togglePopup1() { 
+      const overlay = document.getElementById('popupOverlay1');
+      overlay.classList.toggle('show'); 
+    }
+
+    function togglePopup2() { 
+      const overlay = document.getElementById('popupOverlay2'); 
+      overlay.classList.toggle('show'); 
+    }
+
+    function togglePopup3() { 
+      const overlay = document.getElementById('popupOverlay3'); 
       overlay.classList.toggle('show'); 
     }
 

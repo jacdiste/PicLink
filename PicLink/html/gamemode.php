@@ -130,6 +130,13 @@
     </div>
 
     <div class="dropdown">
+
+            <button class="bottone" id="cambiausername">Cambia Username</button>
+
+            <button class="bottone" id="cambiaemail">Cambia email</button>
+
+            <button class="bottone" id="cambiapassword">Cambia password</button>
+            
             <form action="../php/logout.php" method="post">
                 <button class="bottone" type="submit">Disconnetti</button>
             </form>
@@ -159,7 +166,81 @@
                             </svg>
                     </div>
                     <button class="bottonepopup" type="submit">Conferma</button>
-                    <button class="bottonepopup" id="indietro_cancellaaccount">Indietro</button>    
+                    <button class="bottonepopup" id="indietro_popup">Indietro</button>    
+                </form>        
+            </div> 
+        </div>
+
+        <div id="popupOverlay1" class="overlay-container"> 
+            <div class="popup-box"> 
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    }
+                    else{
+                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                    }
+                ?>
+                <form action="../php/change_username.php" method="post">
+                    <div class="input-box">
+                        <input id="newusername" type="newusername" name="newusername" placeholder="Inserisci qui" required />
+                    </div>
+                    <button class="bottonepopup" type="submit">Conferma</button>
+                    <button class="bottonepopup" id="indietro_popup">Indietro</button>    
+                </form>        
+            </div> 
+        </div>
+
+        <div id="popupOverlay2" class="overlay-container"> 
+            <div class="popup-box"> 
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    }
+                    else{
+                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                    }
+                ?>
+                <form action="../php/delete_account.php" method="post">
+                    <div class="input-box">
+                        <input id="password" type="password" name="password" placeholder="Password" required />
+                            <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                            </svg>
+
+                            <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+                            </svg>
+                    </div>
+                    <button class="bottonepopup" type="submit">Conferma</button>
+                    <button class="bottonepopup" id="indietro_popup">Indietro</button>    
+                </form>        
+            </div> 
+        </div>
+
+        <div id="popupOverlay3" class="overlay-container"> 
+            <div class="popup-box"> 
+                <?php 
+                    if(isset($_GET['error'])){
+                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    }
+                    else{
+                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                    }
+                ?>
+                <form action="../php/delete_account.php" method="post">
+                    <div class="input-box">
+                        <input id="password" type="password" name="password" placeholder="Password" required />
+                            <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                            </svg>
+
+                            <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+                            </svg>
+                    </div>
+                    <button class="bottonepopup" type="submit">Conferma</button>
+                    <button class="bottonepopup" id="indietro_popup">Indietro</button>    
                 </form>        
             </div> 
         </div>

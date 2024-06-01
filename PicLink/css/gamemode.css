@@ -41,24 +41,28 @@ body {
 }
 
 .username {
-  font-size: 18px;
+  margin-left: 10px;
+  font-size: 25px;
   font-family:Arial, Helvetica, sans-serif;
 }
 
 .dropdown {
+  width: 250px;
   display: none;
   position: absolute;
   top: 140px;
-  left: 40px;
+  left: 45px;
   padding: 50px 10px 20px 10px;
   outline: auto;
   background: white;
   border-radius: 17px;
   z-index: 100;
+  animation: fadeInDown 0.5s;
 }
 
 .dropdown button {
   width: 200px;
+  height: 60px;
 }
 
 /* MONEY CONTAINER */
@@ -376,6 +380,22 @@ body {
   position: relative;
   top: 3px;
   right: 35px;
+}
+
+@keyframes fadeInDown { 
+  from { 
+      opacity: 0; 
+      transform: translateY(-20px); 
+  } 
+  to { 
+      opacity: 1; 
+      transform: translateY(0); 
+  } 
+} 
+
+.overlay-container.show { 
+  display: flex; 
+  opacity: 1; 
 }
 
 @keyframes fadeInUp { 
