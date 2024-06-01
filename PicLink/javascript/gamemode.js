@@ -29,12 +29,19 @@ xhr.onreadystatechange = function() {
       togglePopup();
     }
 
+    if(sessionStorage.getItem("newusername_error") == 1){
+      togglePopup1();
+    }
+
     var avatar = document.getElementById("avatar");
     var prev = document.getElementById("prev");
     var next = document.getElementById("next");
     var gioca = document.getElementById("gioca");
     var cancellaaccount = document.getElementById("cancellaaccount");
     var indietro_popup = document.getElementById("indietro_popup");
+    var indietro_popup1 = document.getElementById("indietro_popup1");
+    var indietro_popup2 = document.getElementById("indietro_popup2");
+    var indietro_popup3 = document.getElementById("indietro_popup3");
     var lock = document.getElementById("lock");
     var unlock = document.getElementById("unlock");
     var sblocca = document.getElementsByClassName("bottone-sblocca");
@@ -66,7 +73,19 @@ xhr.onreadystatechange = function() {
     });
 
     indietro_popup.addEventListener("click", () => {
-      togglePopup();
+      location.href = "./gamemode.php";
+    });
+
+    indietro_popup1.addEventListener("click", () => {
+      togglePopup1();
+      location.href = "./gamemode.php";
+    });
+
+    indietro_popup2.addEventListener("click", () => {
+      togglePopup2();
+    });
+
+    indietro_popup3.addEventListener("click", () => {
       location.href = "./gamemode.php";
     });
 

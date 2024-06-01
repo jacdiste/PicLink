@@ -354,11 +354,26 @@ body {
   color: red;
 }
 
-.input-box{
+.input-box_password{
   display: block;
   margin-left: 28px;
   margin-top: 8%;
   margin-bottom: 3%;
+}
+
+.input-box{
+  display: block;
+  margin-top: 8%;
+  margin-bottom: 3%;
+}
+
+.input-box_password input {
+  width: 28%;
+  height: 40px;
+  outline:none;
+  border-radius:40px;
+  font-size: 16px;
+  padding-left: 16px;
 }
 
 .input-box input {
@@ -487,11 +502,19 @@ body {
     height: 55%;
   }
 
+  .input-box_password{
+    margin-bottom: 5%;
+  }
+
   .input-box{
     margin-bottom: 5%;
   }
 
   .input-box input {
+    width: 150px;
+  }
+
+  .input-box_password input {
     width: 150px;
   }
 
@@ -521,6 +544,10 @@ body {
 
   .popup-box { 
     height: 40%;
+  }
+
+  .input-box_password input {
+    width: 180px;
   }
 
   .input-box input {
