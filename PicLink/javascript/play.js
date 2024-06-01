@@ -126,11 +126,13 @@ back.addEventListener("click", () => {
 });
 
 gobackhome.addEventListener("click", () => {
-    window.location = "./gamemode.php?tema="+tema
+    sessionStorage.setItem("tema", tema);
+    window.location = "./gamemode.php";
 });
 
 gobackmenu.addEventListener("click", () => {
-    window.location = "./gamemode.php?tema="+tema;
+    sessionStorage.setItem("tema", tema);
+    window.location = "./gamemode.php";
 });
 
 function togglePopup() {

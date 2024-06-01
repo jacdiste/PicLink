@@ -15,7 +15,7 @@ if($conn){
     $tuple = pg_fetch_assoc($res1);
     $hashed_password = $tuple['password'];
     if (!password_verify($_POST["password"], $hashed_password)) {
-        header("Location: ../html/gamemode.php?tema=animali&error=Password errata");
+        header("Location: ../html/gamemode.php?error=Password errata");
     }
     else {
         $q2 = "DELETE FROM utenti WHERE username=$1";

@@ -9,10 +9,13 @@ xhr.onreadystatechange = function() {
     document.getElementById("money").innerText = data["money"];
 
     //slideshow temi
+
+    if (sessionStorage.getItem("tema") == null) {
+      sessionStorage.setItem("tema", "animali");
+    }
     var temi = [ "animali", "arte", "anime"];
     var prezzo = [0, 200, 400];
-    var search = location.search.substring(1).split("&")
-    var tema = search[0].split("=")[1];
+    var tema = sessionStorage.getItem("tema");
     
     if (tema == "animali") themeIndex = 1;
     else if (tema == "arte") themeIndex = 2;
@@ -20,12 +23,10 @@ xhr.onreadystatechange = function() {
 
     showThemes(themeIndex);
 
-    if ( search.length > 1 ) {
-      parametroGET = search[1].split('=')[0];
+    parametroGET = location.search.substring(1).split('=')[0];
 
-      if(parametroGET=='error'){
-        togglePopup();
-      }
+    if(parametroGET=='error'){
+      togglePopup();
     }
 
     var avatar = document.getElementById("avatar");
@@ -47,12 +48,12 @@ xhr.onreadystatechange = function() {
 
     prev.addEventListener("click", () => {
       plusThemes(-1);
-      location = "./gamemode.php?tema="+tema;
+      sessionStorage.setItem("tema",tema);
     });
 
     next.addEventListener("click", () => {
       plusThemes(1);
-      location = "./gamemode.php?tema="+tema;
+      sessionStorage.setItem("tema",tema);
     });
 
     gioca.addEventListener("click", () => {
@@ -66,6 +67,7 @@ xhr.onreadystatechange = function() {
 
     indietro_popup.addEventListener("click", () => {
       togglePopup();
+      location.href = "./gamemode.php";
     });
 
     cambiausername.addEventListener("click", () => {
@@ -102,7 +104,7 @@ xhr.onreadystatechange = function() {
             document.getElementById("sblocca-"+tema).style.display = "none";
             document.getElementById("gioca").disabled = false;
             document.getElementById("foto"+tema).style.filter = "brightness(0.9)";
-            window.location = "./gamemode.php?tema="+tema;
+            window.location = "./gamemode.php";
           }
         }
 

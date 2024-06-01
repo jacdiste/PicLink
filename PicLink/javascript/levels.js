@@ -16,7 +16,8 @@ xhr.onreadystatechange = function() {
         var back = document.getElementById("back");
 
         back.addEventListener("click", () => {
-            window.location = "./gamemode.php?tema="+tema;
+            sessionStorage.setItem("tema",tema);
+            window.location = "./gamemode.php";
         });
 
         for (let i=0; i<bottoni.length; i++) {
