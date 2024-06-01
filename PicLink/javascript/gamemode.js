@@ -11,7 +11,8 @@ xhr.onreadystatechange = function() {
     //slideshow temi
     var temi = [ "animali", "arte", "anime"];
     var prezzo = [0, 200, 400];
-    var tema= location.search.substring(1).split("=")[1];
+    var search = location.search.substring(1).split("&")
+    var tema = search[0].split("=")[1];
     
     if (tema == "animali") themeIndex = 1;
     else if (tema == "arte") themeIndex = 2;
@@ -19,11 +20,12 @@ xhr.onreadystatechange = function() {
 
     showThemes(themeIndex);
 
-    var parametroGET = window.location.search.substring(1); 
-    parametroGET = parametroGET.split('=')[0];
+    if ( search.length > 1 ) {
+      parametroGET = search[1].split('=')[0];
 
-    if(parametroGET=='error'){
-      togglePopup();
+      if(parametroGET=='error'){
+        togglePopup();
+      }
     }
 
     var avatar = document.getElementById("avatar");
