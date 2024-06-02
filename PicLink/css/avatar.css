@@ -1,0 +1,157 @@
+* {
+    user-select: none;
+  }
+  
+  body {
+    margin: 0;
+    background-color: #114250;
+  }
+  
+  .sup{
+    display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #0a262e;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+  }
+  
+  #back {
+    cursor: pointer;
+    width: 5%;
+    padding: 5px;
+    margin-left: 0.2%;
+    margin-right: auto;
+  }
+  
+  #titolo{
+    color:white;
+    font-size: 60px;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .container{
+    display:grid;
+    margin: auto;
+    width: 80%;
+    margin-top: 130px;
+    place-items: center;
+    place-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(115px, 1em));
+    gap: 12%;
+  }
+
+  .avatarbox {
+    cursor: pointer;
+    filter: brightness(0.9);
+  }
+
+  .avatarbox:hover {
+    filter: none;
+  }
+
+  .avatar {
+    width: 145px;
+    height: 145px;
+    border-radius: 50%;
+    filter: brightness(0.9);
+  }
+
+  .avatar:enabled:hover {
+    filter: none;
+  }
+
+  .overlay {
+    position: absolute;
+    display: flex;
+    width: 145px; height: 145px;
+    transform: translateY(-145px);
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .money-block {
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    gap:5%;
+  }
+  
+  .money-block svg {
+    position:relative;
+    background-color: #ffe600;
+    border-radius: 50%;
+    width: auto;
+    height: auto;
+  }
+  
+  .money-block span {
+    font-size: 20px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  @media screen and (max-width: 945px) {
+    .container {
+      grid-template-columns: repeat(4, minmax(55px, 1fr));
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+    #titolo{
+      font-size: 55px;
+    }
+  }
+  
+  @media screen and (max-width: 1100px) and (max-height:1400px) {
+    .container {
+      margin-top: 160px;
+      grid-template-columns: repeat(3, minmax(55px, 1fr));
+      column-gap: 1px;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+    }
+    #titolo{
+      font-size: 55px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    #back {
+      width: 10%;
+    }
+    
+    .container {
+      margin-top: 130px;
+      grid-template-columns: repeat(3, minmax(55px, 1fr));
+    }
+    .avatar {
+      width: 100px;
+      height: 100px;
+    }
+    #titolo{
+      font-size: 38px;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .container {
+      margin-top: 120px;
+      grid-template-columns: repeat(3, minmax(55px, 1fr));
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+    }
+    #titolo{
+      font-size: 28px;
+    }
+  }
+  

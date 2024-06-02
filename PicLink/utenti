@@ -3,6 +3,8 @@ CREATE TABLE public.utenti
     username character varying(50) NOT NULL,
     email character varying(200) NOT NULL,
     password character varying(255) NOT NULL,
+    avatarscelto character varying(255) NOT NULL DEFAULT '1.png',
+    avatar boolean[12] NOT NULL DEFAULT '{true, false, false, false, false, false, false, false, false, false, false, false}',
     money integer NOT NULL DEFAULT 0,
     animali boolean NOT NULL DEFAULT true,
     arte boolean NOT NULL DEFAULT false,

@@ -7,6 +7,7 @@ xhr.onreadystatechange = function() {
 
     document.getElementById("user").innerText = data["username"];
     document.getElementById("money").innerText = data["money"];
+    document.getElementById("avatar-image").src = "../foto/avatar-gamemode/"+data["avatarscelto"];
 
     //slideshow temi
 
@@ -45,6 +46,7 @@ xhr.onreadystatechange = function() {
     var lock = document.getElementById("lock");
     var unlock = document.getElementById("unlock");
     var sblocca = document.getElementsByClassName("bottone-sblocca");
+    var cambiaavatar = document.getElementById("cambiaavatar");
     var cambiausername = document.getElementById("cambiausername");
     var cambiaemail = document.getElementById("cambiaemail");
     var cambiapassword = document.getElementById("cambiapassword");
@@ -87,6 +89,10 @@ xhr.onreadystatechange = function() {
 
     indietro_popup3.addEventListener("click", () => {
       location.href = "./gamemode.php";
+    });
+
+    cambiaavatar.addEventListener("click", () => {
+      window.location = "./avatar.php";
     });
 
     cambiausername.addEventListener("click", () => {

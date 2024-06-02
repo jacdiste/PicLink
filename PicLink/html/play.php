@@ -37,7 +37,7 @@
     <div class="level-info">
         <img id="back" src="../foto/freccia-sinistra.png"/>
         <span id="numero-livello"></span>
-        <svg id="gobackhome" xmlns="http://www.w3.org/2000/svg" class="bi bi-house-fill" viewBox="0 0 16 16" onclick="window.location='./gamemode.php'">
+        <svg id="gobackhome" xmlns="http://www.w3.org/2000/svg" class="bi bi-house-fill" viewBox="0 0 16 16">
           <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
           <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
         </svg>
@@ -60,7 +60,7 @@
 
     <div class="answer">
         <input id="answer-input" placeholder="Scrivi qui la tua risposta" autocomplete="off"/>
-        <button type="submit" id="link" onclick="togglePopup()">
+        <button type="submit" id="link">
             <img class="fotolink" src="../foto/link button1.png" draggable="false"/>
         </button>
     </div>
@@ -69,7 +69,7 @@
         <div class="popup-box"> 
             <h2 id="titolopopup">HAI INDOVINATO!</h2> 
             <span id="monetepopup">Hai guadagnato N monete!</span>
-            <button class="bottonepopup" id="prossimolvl" onclick="next()">Prossimo livello</button> 
+            <button class="bottonepopup" id="prossimolvl">Prossimo livello</button> 
             <button class="bottonepopup" id="tornamenu">Torna al menu</button>
         </div> 
     </div>
