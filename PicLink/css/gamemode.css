@@ -50,14 +50,14 @@ body {
   width: 250px;
   display: none;
   position: absolute;
-  top: 140px;
-  left: 45px;
-  padding: 50px 10px 20px 10px;
+  top: 141px;
+  left: 40px;
+  padding-top: 18px;
   outline: auto;
   background: white;
   border-radius: 17px;
   z-index: 100;
-  animation: fadeInDown 0.5s;
+  animation: fadeInDown 1s;
 }
 
 .dropdown button {
@@ -485,13 +485,27 @@ body {
     margin-top:5px;
   }
 
+  .dropdown {
+    width: 225px;
+    height: 450px;
+    top: 117px;
+    left: 19%;
+  }
+
+  .dropdown button {
+    width: 180px;
+    height: 55px;
+  }
+
   #play {
     padding-top: 0;     
   }
+
   .bottone{
     width: 300px;
     height:80px;
   }
+
   .themes-container {
     padding-top:30px;
   }
