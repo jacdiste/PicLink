@@ -1,4 +1,4 @@
-//BUTTONS
+//event listeners per bottoni
 const bottoni=document.getElementById("bottoni");
 bottoni.addEventListener("click",(event) => {
     if(event.target.name=="Login") {

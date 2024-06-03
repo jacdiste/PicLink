@@ -1,3 +1,4 @@
+//get ajax per dati utente dal database
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
@@ -8,8 +9,6 @@ xhr.onreadystatechange = function() {
     document.getElementById("user").innerText = data["username"];
     document.getElementById("money").innerText = data["money"];
     document.getElementById("avatar-image").src = "../foto/avatar-gamemode/"+data["avatarscelto"];
-
-    //slideshow temi
 
     if (sessionStorage.getItem("tema") == null) {
       sessionStorage.setItem("tema", "animali");
@@ -24,6 +23,7 @@ xhr.onreadystatechange = function() {
 
     showThemes(themeIndex);
 
+    //gestione popup errori
     if(sessionStorage.getItem("deleteaccount_error")==1){
       togglePopup();
       sessionStorage.setItem("deleteaccount_error", 0);
@@ -54,6 +54,7 @@ xhr.onreadystatechange = function() {
       sessionStorage.setItem("newpassword_error1", 0);
     }
 
+    //aggiunta degli eventlisteners
     var avatar = document.getElementById("avatar");
     var prev = document.getElementById("prev");
     var next = document.getElementById("next");
@@ -170,6 +171,7 @@ xhr.onreadystatechange = function() {
     
     for (let i=0; i<sblocca.length; i++) {
       sblocca[i].addEventListener("click", (event) => {
+        //post ajax per acquisto temi
         var xhr2 = new XMLHttpRequest();
         var post = "costo="+prezzo[i]+"&tema="+tema;
 
@@ -188,12 +190,11 @@ xhr.onreadystatechange = function() {
       });
     }
 
-    // Next/previous controls
+    // scorrimento temi
     function plusThemes(n) {
       showThemes(themeIndex += n);
     }
 
-    // Thumbnail image controls
     function currentTheme(n) {
       showThemes(themeIndex = n);
     }
@@ -224,6 +225,7 @@ xhr.onreadystatechange = function() {
       themes[themeIndex-1].style.display = "block";
     }
 
+  //dropdown azioni per utente
     function toggleDropdown() {
       const dropdown = document.querySelector(".dropdown");
       if (dropdown.style.display === "none" || dropdown.style.display === "") {

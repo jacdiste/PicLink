@@ -1,6 +1,11 @@
 <?php
     session_start();
 
+// Verifico se è stata settata la variabile di sessione username;
+// mi connetto al database ed eseguo una query per modificare il valore dei soldi dopo l'acquisto;
+// salvo il nuovo netto dei soldi nella variabile di sessione money;
+// eseguo un' ultima query per segnalare che il tema in questione è stato sbloccato.
+
     if(isset($_SESSION['username'])) {
         if (isset($_POST['costo'])) {
             $costo = (int) $_POST['costo'];

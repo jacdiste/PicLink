@@ -1,5 +1,6 @@
 const bottoni=document.getElementsByClassName("bottone");
 
+//get ajax per dati dell'utente dal database
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
@@ -22,6 +23,8 @@ xhr.onreadystatechange = function() {
         back.addEventListener("click", () => {
             window.location = "./gamemode.php";
         });
+
+        //gestione avatar bloccati/sbloccati
 
         for (let i=0; i<avatar.length; i++) {
             var src= avatar[i].src.split('/');
@@ -52,6 +55,8 @@ xhr.onreadystatechange = function() {
 
                 else {
                     avatarbox[i-1].addEventListener("click", (event) => {
+                       
+                        //post ajax per acquisto avatar
                         var post2 = "costo="+prezzi[i]+"&avatar="+(i+1)+".png&indice="+(i+1);
                         var xhr2 = new XMLHttpRequest();
                         xhr2.onreadystatechange = function() {
@@ -70,6 +75,8 @@ xhr.onreadystatechange = function() {
             else {
                 if (i==0) {
                     avatar[0].addEventListener("click", (event) => {
+                        
+                        //post ajax per selezione avatar iniziale
                         var xhr3 = new XMLHttpRequest();
                         var post3 = "avatar=1.png";
                         xhr3.onreadystatechange = function() {
@@ -89,6 +96,8 @@ xhr.onreadystatechange = function() {
                 }
                 else {
                     avatarbox[i-1].addEventListener("click", (event) => {
+                        
+                        //post ajax per selezione avatar sbloccati
                         var xhr4 = new XMLHttpRequest();
                         var post4 = "avatar="+(i+1)+".png";
                         xhr4.onreadystatechange = function() {

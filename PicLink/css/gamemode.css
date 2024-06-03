@@ -516,6 +516,10 @@ body {
     margin-left:-37%;
   }
 
+  .theme-block span {
+    font-size: 10px;
+  }
+
   .bottone-sblocca {
     width: 180px;
     height: 60px;

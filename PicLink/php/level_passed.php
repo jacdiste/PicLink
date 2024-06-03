@@ -1,5 +1,11 @@
 <?php 
     session_start(); 
+
+// Verifico se è stata settata la variabile di sessione username;
+// mi connetto al database ed eseguo una query per modificare il valore dei soldi dopo la vittoria;
+// salvo il nuovo netto dei soldi nella variabile di sessione money;
+// eseguo un' ultima query per segnalare che il livello in questione è stato completato.
+
     if(isset($_SESSION['username'])) {
         if (isset($_POST['monete'])) {
             $money = (int) $_POST['monete'];
