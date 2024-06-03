@@ -1,7 +1,7 @@
 <?php
 
 if ( $_SERVER["REQUEST_METHOD"] != "POST") {
-    header("Location: ../index.html");
+    header("Location: ../index.php");
 }
 else {
     $conn = pg_connect("host=localhost port=5432 dbname=PicLink user=postgres password=0000") or die("Could not connect: " . pg_last_error());
@@ -21,7 +21,7 @@ if($conn){
         $q2 = "DELETE FROM utenti WHERE username=$1";
         if(pg_query_params($conn, $q2, array($username))==true){
             session_destroy();
-            header("Location: ../index.html");
+            header("Location: ../index.php");
             exit();
         }
     }

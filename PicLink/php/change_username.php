@@ -1,7 +1,7 @@
 <?php
 
 if ( $_SERVER["REQUEST_METHOD"] != "POST") {
-    header("Location: ../index.html");
+    header("Location: ../index.php");
 }
 else {
     $conn = pg_connect("host=localhost port=5432 dbname=PicLink user=postgres password=0000") or die("Could not connect: " . pg_last_error());

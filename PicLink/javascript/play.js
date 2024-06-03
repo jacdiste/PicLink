@@ -202,7 +202,7 @@ xhr.onreadystatechange = function() {
                                 }
                             }
 
-                            xhr3.open("POST","../html/play.php",true);
+                            xhr3.open("POST","../php/level_passed.php",true);
                             xhr3.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                             xhr3.send(post);
                         }

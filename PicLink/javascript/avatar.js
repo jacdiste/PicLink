@@ -24,7 +24,9 @@ xhr.onreadystatechange = function() {
         for (let i=0; i<avatar.length; i++) {
             var src= avatar[i].src.split('/');
             var srcavatar = src[src.length - 1];
+            var avatarindex;
             if (srcavatar == data["avatarscelto"]) {
+                avatarindex = i;
                 avatar[i].disabled = true;
                 avatar[i].style.outline = "4px solid white";
             }
@@ -70,7 +72,12 @@ xhr.onreadystatechange = function() {
                         var post3 = "avatar=1.png";
                         xhr3.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
-                                window.location = "./avatar.php"
+                                avatar[i].disabled = true;
+                                avatar[i].style.outline = "4px solid white";
+
+                                avatar[avatarindex].disabled = false;
+                                avatar[avatarindex].style.outline = "none";
+                                avatarindex = i;
                             }
                         }
                         xhr3.open("POST","../php/selezionaavatar.php",true);
@@ -84,7 +91,13 @@ xhr.onreadystatechange = function() {
                         var post4 = "avatar="+(i+1)+".png";
                         xhr4.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
-                                window.location = "./avatar.php"
+                                avatar[i].disabled = true;
+                                avatar[i].style.outline = "4px solid white";
+
+                                avatar[avatarindex].disabled = false;
+                                avatar[avatarindex].style.outline = "none";
+
+                                avatarindex = i;
                             }
                         }
                         xhr4.open("POST","../php/selezionaavatar.php",true);
