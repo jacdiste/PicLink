@@ -27,6 +27,10 @@ if($conn) {
             $money = $tuple['money'];
             $_SESSION["money"] = $money;
 
+            //salvo l'email in una variabile superglobale di sessione
+            $email = $tuple['email'];
+            $_SESSION["email"] = $email;
+            
             header("Location: ../html/gamemode.php");
         }
     }

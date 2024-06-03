@@ -24,14 +24,34 @@ xhr.onreadystatechange = function() {
 
     showThemes(themeIndex);
 
-    parametroGET = location.search.substring(1).split('=')[0];
-
-    if(parametroGET=='error'){
+    if(sessionStorage.getItem("deleteaccount_error")==1){
       togglePopup();
+      sessionStorage.setItem("deleteaccount_error", 0);
     }
 
-    if(sessionStorage.getItem("newusername_error") == 1){
+    if(sessionStorage.getItem("newusername_error")==1){
       togglePopup1();
+      sessionStorage.setItem("newusername_error", 0);
+    }
+    
+    if(sessionStorage.getItem("newemail_error")==1){
+      togglePopup2();
+      sessionStorage.setItem("newemail_error", 0);
+    }
+
+    if(sessionStorage.getItem("newpassword_error")==1){
+      togglePopup3();
+      sessionStorage.setItem("newpassword_error", 0);
+    }
+
+    if(sessionStorage.getItem("password_confirmation")==1){
+      togglePopup4();
+      sessionStorage.setItem("password_confirmation", 0);
+    }
+
+    if(sessionStorage.getItem("newpassword_error1")==1){
+      togglePopup4();
+      sessionStorage.setItem("newpassword_error1", 0);
     }
 
     var avatar = document.getElementById("avatar");
@@ -43,8 +63,13 @@ xhr.onreadystatechange = function() {
     var indietro_popup1 = document.getElementById("indietro_popup1");
     var indietro_popup2 = document.getElementById("indietro_popup2");
     var indietro_popup3 = document.getElementById("indietro_popup3");
+    var indietro_popup4 = document.getElementById("indietro_popup4");
     var lock = document.getElementById("lock");
+    var lock3 = document.getElementById("lock3");
+    var lock4 = document.getElementById("lock4");
     var unlock = document.getElementById("unlock");
+    var unlock3 = document.getElementById("unlock3");
+    var unlock4 = document.getElementById("unlock4");
     var sblocca = document.getElementsByClassName("bottone-sblocca");
     var cambiaavatar = document.getElementById("cambiaavatar");
     var cambiausername = document.getElementById("cambiausername");
@@ -85,9 +110,16 @@ xhr.onreadystatechange = function() {
 
     indietro_popup2.addEventListener("click", () => {
       togglePopup2();
+      location.href = "./gamemode.php";
     });
 
     indietro_popup3.addEventListener("click", () => {
+      togglePopup3();
+      location.href = "./gamemode.php";
+    });
+
+    indietro_popup4.addEventListener("click", () => {
+      togglePopup4();
       location.href = "./gamemode.php";
     });
 
@@ -111,11 +143,27 @@ xhr.onreadystatechange = function() {
     });
 
     lock.addEventListener("click", () => {
-      myFunction();
+      un_lockPassword();
+    });
+
+    lock3.addEventListener("click", () => {
+      un_lockPassword3();
+    });
+
+    lock4.addEventListener("click", () => {
+      un_lockPassword4();
     });
 
     unlock.addEventListener("click", () => {
-      myFunction();
+      un_lockPassword();
+    });
+
+    unlock3.addEventListener("click", () => {
+      un_lockPassword3();
+    });
+
+    unlock4.addEventListener("click", () => {
+      un_lockPassword4();
     });
 
     
@@ -204,10 +252,47 @@ xhr.onreadystatechange = function() {
       overlay.classList.toggle('show'); 
     }
 
-    function myFunction() {
+    function togglePopup4() { 
+      const overlay = document.getElementById('popupOverlay4'); 
+      overlay.classList.toggle('show'); 
+    }
+
+    function un_lockPassword() {
       var password = document.getElementById("password");
       var lock = document.getElementById("lock");
       var unlock = document.getElementById("unlock");
+
+      if (password.type === "password") {
+        lock.style.display="none";
+        unlock.style.display="initial";
+        password.type = "text";
+      } else {
+        lock.style.display="initial";
+        unlock.style.display="none";
+        password.type = "password";
+      }
+    }
+
+    function un_lockPassword3() {
+      var password = document.getElementById("password3");
+      var lock = document.getElementById("lock3");
+      var unlock = document.getElementById("unlock3");
+
+      if (password.type === "password") {
+        lock.style.display="none";
+        unlock.style.display="initial";
+        password.type = "text";
+      } else {
+        lock.style.display="initial";
+        unlock.style.display="none";
+        password.type = "password";
+      }
+    }
+
+    function un_lockPassword4() {
+      var password = document.getElementById("password4");
+      var lock = document.getElementById("lock4");
+      var unlock = document.getElementById("unlock4");
 
       if (password.type === "password") {
         lock.style.display="none";
