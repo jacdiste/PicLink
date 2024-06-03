@@ -2,6 +2,15 @@
   user-select: none;
 }
 
+body {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ==================================== Slideshow di sfondo ======================================== */
+
 #background-container {
   position: fixed;
   top: 0;
@@ -39,6 +48,8 @@
 .fade-out {
   opacity: 0;
 }
+
+/* ============================================================================================== */
 
 .titolo{
   display: block;
@@ -81,12 +92,7 @@
   transform:translateY(4px);
 }
 
-body {
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-}
+/* =================================== Responsiveness ====================================== */
 
 @media screen and (max-width: 600px){
   .titolo {
@@ -98,3 +104,5 @@ body {
     
   }
 }
+
+/* ========================================================================================= */

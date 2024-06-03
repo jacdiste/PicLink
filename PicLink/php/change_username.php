@@ -7,6 +7,11 @@ else {
     $conn = pg_connect("host=localhost port=5432 dbname=PicLink user=postgres password=0000") or die("Could not connect: " . pg_last_error());
 }
 
+// Verifico se è stata stabilita la connessione al database;
+// eseguo una query per verificare se il nuovo username è già presente nel database;
+// se è presente, creo una variabile di sessione per gestire l'errore in gamemode.php;
+// se la verifica va a buon fine, eseguo la query per aggiornare la tupla e salvo il nuovo username nella var. di sessione.
+
 if($conn){
     session_start();
     $username = $_SESSION['username'];

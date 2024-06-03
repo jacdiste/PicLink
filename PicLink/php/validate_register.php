@@ -7,6 +7,14 @@ else {
     $conn = pg_connect("host=localhost port=5432 dbname=PicLink user=postgres password=0000") or die("Could not connect: " . pg_last_error());
 }
 
+// Verifico se è stata stabilita la connessione al database;
+// eseguo la query per verificare che non esiste una tupla con lo stesso username;
+// se esiste, setto l'error nell'url e indirizzo a register.php;
+// se l'username non è in uso, eseguo una query per verificare che non esiste una tupla con la stessa email;
+// se esiste, setto l'error nell'url e indirizzo a register.php;
+// se invece anche questa verifica è soddisfatta, genero la password hashata e eseguo la query per inserire la tupla relativa al nuovo account;
+// indirizzo a register.php con successo.
+
 if ($conn) {
     $username = $_POST['username'];
     $q1 = "select * from utenti where username=$1";

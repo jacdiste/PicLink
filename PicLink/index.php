@@ -6,6 +6,7 @@
     <title>PicLink</title>
     <link rel="stylesheet" href="./css/homepage.css">
     
+    <!-- Script che implementa lo slideshow sullo sfondo. -->
     <script>
         var images = [];
         var slideTime = 3000;

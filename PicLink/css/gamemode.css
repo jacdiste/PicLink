@@ -2,7 +2,6 @@
   user-select: none;
 }
 
-/* BODY */
 body {
   background-color: #114250;
   background-repeat: no-repeat;
@@ -11,14 +10,15 @@ body {
   background-position: center;
 }
 
-/* USER DATA */
+
+/* =============================== Avatar bar ================================== */
+
 #profile {
   display:flex;
   align-items: center;
   padding: 30px 30px 30px 30px;
 }
 
-/* AVATAR BAR */
 #avatar-bar {
   width: 250px;
   height: 80px;
@@ -46,6 +46,10 @@ body {
   font-family:Arial, Helvetica, sans-serif;
 }
 
+/* ================================================================================= */
+
+/* =============================== Menu a tendina ================================== */
+
 .dropdown {
   width: 250px;
   display: none;
@@ -65,7 +69,20 @@ body {
   height: 60px;
 }
 
-/* MONEY CONTAINER */
+@keyframes fadeInDown { 
+  from { 
+      opacity: 0; 
+      transform: translateY(-20px); 
+  } 
+  to { 
+      opacity: 1; 
+      transform: translateY(0); 
+  } 
+}
+/* ================================================================================== */
+
+/* =============================== Money container ================================== */
+
 #money-container {
   width: 150px;
   height: 40px;
@@ -92,7 +109,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* THEMES CONTAINER */
+/* =================================================================================== */
+
+/*====================================== Temi =========================================*/
+
 .themes-container {
   position: relative;
   padding: 10px 0 30px 0;
@@ -243,7 +263,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* PLAY BUTTON */
+/* ================================================================================== */
+
+/*====================================== Bottone =========================================*/
+
 .bottone{
   display: block;
   margin: auto;
@@ -289,7 +312,10 @@ body {
   filter: none;
 }
 
-/* POPUP */
+/* ================================================================================== */
+
+/*======================================= Popup ======================================*/
+
 .overlay-container { 
   display: none; 
   position: fixed; 
@@ -420,17 +446,6 @@ body {
   position: relative;
   top: 3px;
   right: 35px;
-}
-
-@keyframes fadeInDown { 
-  from { 
-      opacity: 0; 
-      transform: translateY(-20px); 
-  } 
-  to { 
-      opacity: 1; 
-      transform: translateY(0); 
-  } 
 } 
 
 .overlay-container.show { 
@@ -438,6 +453,7 @@ body {
   opacity: 1; 
 }
 
+/* animazione dei popup*/
 @keyframes fadeInUp { 
   from { 
       opacity: 0; 
@@ -447,29 +463,12 @@ body {
       opacity: 1; 
       transform: translateY(0); 
   } 
-} 
-
-.overlay-container.show { 
-  display: flex; 
-  opacity: 1; 
 }
 
-/* RESPONSIVENESS */
-@keyframes fadeInUp { 
-  from { 
-      opacity: 0; 
-      transform: translateY(20px); 
-  } 
-  to { 
-      opacity: 1; 
-      transform: translateY(0); 
-  } 
-} 
+/*==================================================================================*/
 
-.overlay-container.show { 
-  display: flex; 
-  opacity: 1; 
-}
+
+/*================================= Responsiveness ==================================*/
 
 @media screen and (max-width: 600px){
   #profile {
@@ -592,6 +591,8 @@ body {
   }
 }
 
+/*-------------------------------------------------------------------------*/
+
 @media screen and (min-width: 600px) and (max-width: 1300px){
   .foto-tema {
     height: 500px;
@@ -619,6 +620,4 @@ body {
   }
 }
 
-
- 
- 
+/*============================================================================*/

@@ -1,6 +1,13 @@
 <?php
 $conn = pg_connect("host=localhost port=5432 dbname=PicLink user=postgres password=0000") or die("Could not connect: " . pg_last_error());
 
+// Verifico se è stata stabilita la connessione al database;
+// eseguo la query per accedere alla tupla relativa all'email inserita;
+// se l'email non esiste, setto l'error nell'url e indirizzo verso login.php;
+// se l'email è presente nel database, eseguo un'altra query per estrarre la password e la confronto con quella immessa dall'utente;
+// se le password non sono uguali, setto l'error nell'url e indirizzo verso login.php;
+// se la verifica va a buon fine, inizio la sessione settando tutte le variabili di interesse (username, money, email) e indirizzo a gamemode.php.
+
 if($conn) {
     $email = $_POST["email"];
     $q1 = "select * from utenti where email = $1";
@@ -19,15 +26,12 @@ if($conn) {
         else {
             session_start();
 
-            //salvo l'username in una variabile superglobale di sessione
             $username = $tuple['username'];
             $_SESSION["username"] = $username;
 
-            //trovo il numero di monete relative all'utente e salvo il dato in un'altra variabile superglobale di sessione
             $money = $tuple['money'];
             $_SESSION["money"] = $money;
 
-            //salvo l'email in una variabile superglobale di sessione
             $email = $tuple['email'];
             $_SESSION["email"] = $email;
             
