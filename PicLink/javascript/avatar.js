@@ -56,7 +56,7 @@ xhr.onreadystatechange = function() {
                             if (this.readyState == 4 && this.status == 200) {
                                 overlay[i-1].style.visibility = "hidden";
                                 avatar[i].style.filter = "brightness(0.9)";
-                                window.location = "./avatar.php?"+post2;
+                                window.location = "./avatar.php";
                             }
                         };
                         xhr2.open("POST","../php/compraavatar.php",true);
