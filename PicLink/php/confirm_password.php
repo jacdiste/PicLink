@@ -13,18 +13,14 @@ if($conn){
     $q1 = "select * from utenti where username = $1";
     $res1 = pg_query_params($conn, $q1, array($username));
     $tuple = pg_fetch_assoc($res1);
-    $current_hashed_password = $tuple['password'];
-    if (password_verify($_POST["password"], $current_hashed_password)) {
-        $_SESSION['newpassword_error1'] = "Nuova password uguale alla precedente";
-        
+    $hashed_password = $tuple['password'];
+    if (!password_verify($_POST["password"], $hashed_password)) {
+        $_SESSION['newpassword_error'] = "Password attuale errata";
         header("Location:../html/gamemode.php");
     }
     else {
-        $newpassword = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        $q2 = "update utenti set password=$1 where username=$2";
-        $res2 = pg_query_params($conn, $q2, array($newpassword, $username));
-
-        header("Location:../html/login.php");
+        $_SESSION['password_confirmation'] = 1;
+        header("Location:../html/gamemode.php");
     }
     exit();
 }

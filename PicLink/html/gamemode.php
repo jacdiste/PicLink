@@ -145,8 +145,10 @@
         <div id="popupOverlay" class="overlay-container"> 
             <div class="popup-box"> 
                 <?php 
-                    if(isset($_GET['error'])){
+                    if(isset($_SESSION['deleteaccount_error'])){
                         echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                        echo "<script> sessionStorage.setItem('deleteaccount_error', 1);</script>";
+                        unset($_SESSION['deleteaccount_error']);
                     }
                     else{
                         echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
@@ -173,13 +175,12 @@
             <div class="popup-box"> 
                 <?php 
                     if(isset($_SESSION['newusername_error'])){
+                        echo "<span id='titolopopup' class='error'>Username già esistente, ritenta.</span>";
                         echo "<script> sessionStorage.setItem('newusername_error', 1);</script>";
-                        echo "<span id='titolopopup' class='error'>Nome utente già esistente, ritenta.</span>";
                         unset($_SESSION['newusername_error']);
                     }
                     else{
-                        echo "<script> sessionStorage.setItem('newusername_error', 0);</script>";
-                        echo "<span id='titolopopup'>Inserisci il nuovo username</span>";
+                        echo "<span id='titolopopup'>Inserisci il tuo nuovo username</span>";
                     }
                 ?>
                 <form action="../php/change_username.php" method="post">
@@ -195,54 +196,91 @@
         <div id="popupOverlay2" class="overlay-container"> 
             <div class="popup-box"> 
                 <?php 
-                    if(isset($_GET['error'])){
-                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    if(isset($_SESSION['newemail_error'])){
+                        echo "<span id='titolopopup' class='error'>E-mail già esistente, ritenta.</span>";
+                        echo "<script> sessionStorage.setItem('newemail_error', 1);</script>";
+                        unset($_SESSION['newemail_error']);
                     }
                     else{
-                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                        echo "<span id='titolopopup'>Inserisci la tua nuova e-mail</span>";
                     }
                 ?>
-                <form action="../php/delete_account.php" method="post">
+                <form action="../php/change_email.php" method="post">
                     <div class="input-box">
-    
-                            <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
-                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
-                            </svg>
-
-                            <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
-                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
-                            </svg>
+                        <input id="newemail" type="email" name="newemail" placeholder="Nuova e-mail" required />
                     </div>
                     <button class="bottonepopup" type="submit">Conferma</button>
-                </form> 
+                </form>  
                     <button class="bottonepopup" id="indietro_popup2">Indietro</button>       
-            </div> 
+            </div>  
         </div>
 
         <div id="popupOverlay3" class="overlay-container"> 
             <div class="popup-box"> 
                 <?php 
-                    if(isset($_GET['error'])){
-                        echo "<span id='titolopopup' class='error'>Password errata, ritenta.</span>";
+                    if(isset($_SESSION['newpassword_error'])){
+                        echo "<span id='titolopopup' class='error'>Password corrente errata, ritenta.</span>";
+                        echo "<script> sessionStorage.setItem('newpassword_error', 1);</script>";
+                        unset($_SESSION['newpassword_error']);
+                        unset($_SESSION['password_confirmation']);
+                    }
+                    else if(isset($_SESSION['password_confirmation'])){
+                        echo "<script> sessionStorage.setItem('password_confirmation', 1);</script>";
+                        unset($_SESSION['password_confirmation']);
+                        unset($_SESSION['newpassword_error']);
                     }
                     else{
-                        echo "<span id='titolopopup'>Vuoi veramente eliminare l'account?</span>";
+                        echo "<span id='titolopopup'>Inserisci la tua attuale password</span>";
+                        unset($_SESSION['password_confirmation']);
+                        unset($_SESSION['newpassword_error']);
                     }
                 ?>
-                <form action="../php/delete_account.php" method="post">
-                    <div class="input-box">
-             
-                            <svg id="lock" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
+                <form action="../php/confirm_password.php" method="post">
+                    <div class="input-box_password">
+                        <input id="password3" type="password" name="password" placeholder="Password attuale" required />
+                            <svg id="lock3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
                                 <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
                             </svg>
 
-                            <svg id="unlock" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
+                            <svg id="unlock3" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
                                 <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
                             </svg>
                     </div>
+                    
                     <button class="bottonepopup" type="submit">Conferma</button>
-                </form>        
-                    <button class="bottonepopup" id="indietro_popup3">Indietro</button>
+                </form>    
+                    <button class="bottonepopup" id="indietro_popup3">Indietro</button>     
+            </div> 
+        </div>
+
+        <div id="popupOverlay4" class="overlay-container"> 
+            <div class="popup-box"> 
+                <?php 
+                    if(isset($_SESSION['newpassword_error1'])){
+                        echo "<span id='titolopopup' class='error'>La nuova password è uguale alla precedente, ritenta.</span>";
+                        echo "<script> sessionStorage.setItem('newpassword_error1', 1);</script>";
+                        unset($_SESSION['newpassword_error1']);
+                    }
+                    else{
+                        echo "<span id='titolopopup'>Inserisci la tua nuova password</span>";
+                        unset($_SESSION['newpassword_error1']);
+                    }
+                ?>
+                <form action="../php/change_password.php" method="post">
+                    <div class="input-box_password">
+                        <input id="password4" type="password" name="password" placeholder="Nuova password" required />
+                            <svg id="lock4" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>
+                            </svg>
+
+                            <svg id="unlock4" xmlns="http://www.w3.org/2000/svg" display="none" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16" cursor="pointer">
+                                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/>
+                            </svg>
+                    </div>
+                    
+                    <button class="bottonepopup" type="submit">Conferma</button>
+                </form>    
+                    <button class="bottonepopup" id="indietro_popup4">Indietro</button>     
             </div> 
         </div>
         

@@ -383,6 +383,7 @@ body {
   border-radius:40px;
   font-size: 16px;
   padding-left: 16px;
+  padding-right: 16px;
 }
 
 #lock{
@@ -391,7 +392,31 @@ body {
   right: 35px;
 }
 
+#lock3{
+  position: relative;
+  top: 3px;
+  right: 35px;
+}
+
+#lock4{
+  position: relative;
+  top: 3px;
+  right: 35px;
+}
+
 #unlock{
+  position: relative;
+  top: 3px;
+  right: 35px;
+}
+
+#unlock3{
+  position: relative;
+  top: 3px;
+  right: 35px;
+}
+
+#unlock4{
   position: relative;
   top: 3px;
   right: 35px;
@@ -531,8 +556,24 @@ body {
   #lock{
     margin-left: 5px;
   }
+
+  #lock3{
+    margin-left: 5px;
+  }
+
+  #lock4{
+    margin-left: 5px;
+  }
   
   #unlock{
+    margin-left: 5px;
+  }
+
+  #unlock3{
+    margin-left: 5px;
+  }
+
+  #unlock4{
     margin-left: 5px;
   }
 }
