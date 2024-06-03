@@ -100,7 +100,8 @@ xhr.onreadystatechange = function() {
     });
 
     indietro_popup.addEventListener("click", () => {
-      location.href = "./gamemode.php";
+      togglePopup();
+      document.getElementById("titolopopup").display = "none";
     });
 
     indietro_popup1.addEventListener("click", () => {

@@ -6,6 +6,8 @@ xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(this.responseText);
 
+        document.getElementById("money").innerText = data["money"];
+
         var listasbloccati = data["avatar"];
         listasbloccati = listasbloccati.substring(1,listasbloccati.length-1);
         listasbloccati = listasbloccati.split(",");
