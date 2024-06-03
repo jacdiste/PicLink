@@ -29,7 +29,7 @@ if($conn){
         $q2 = "update utenti set password=$1 where username=$2";
         $res2 = pg_query_params($conn, $q2, array($newpassword, $username));
 
-        header("Location:../html/login.php");
+        header("Location:../html/gamemode.php");
     }
     exit();
 }
