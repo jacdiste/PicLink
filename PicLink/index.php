@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+    <link rel="icon" type="image/x-icon" href="./foto/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicLink</title>
@@ -21,9 +22,8 @@
         images[8] = './foto/immagini-homepage/gatto.png';
         images[9] = './foto/immagini-homepage/mare.png';
         images[10] = './foto/immagini-homepage/monte.png';
-        images[11] = './foto/immagini-homepage/panino.png';
-        images[12] = './foto/immagini-homepage/sprechi.png';
-        images[13] = './foto/immagini-homepage/statua.png';
+        images[11] = './foto/immagini-homepage/sprechi.png';
+        images[12] = './foto/immagini-homepage/statua.png';
         var i = Math.floor(Math.random() * images.length); 
             
         function changePicture() {
