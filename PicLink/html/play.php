@@ -42,7 +42,7 @@
     <div id="popupOverlay" class="overlay-container"> 
         <div class="popup-box"> 
             <h2 id="titolopopup">HAI INDOVINATO!</h2> 
-            <span id="monetepopup">Hai guadagnato N monete!</span>
+            <span id="monetepopup"></span>
             <button class="bottonepopup" id="prossimolvl">Prossimo livello</button> 
             <button class="bottonepopup" id="tornamenu">Torna al menu</button>
         </div> 

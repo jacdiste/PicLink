@@ -21,110 +21,118 @@ xhr.onreadystatechange = function() {
         var images = document.getElementsByClassName("foto");
         
         //timer
-        for (var i=0; i<images.length; i++) {
-            images[i].src="../foto/Gioco/Tema "+tema+"/"+level+"/"+(i+1)+".png";
-            if (i!=0) {
-                images[i].style.visibility = "hidden";
-            }
-        }
+        let primo = false, secondo = false, terzo = false;
         
         const time1 = 10;
         const time2 = 20;
         const time3 = 30;
-        
-        let timePassed1 = 0;
-        let timePassed2 = 0;
-        let timePassed3 = 0;
-        
+
         let timeLeft1 = time1;
         let timeLeft2= time2;
         let timeLeft3= time3;
-        
-        function showTime (time) {
-            var minuti = Math.floor(time / 60);
-        
-            var secondi = time % 60;
-            if (secondi < 10) {
-                secondi = "0" + secondi;
+
+        if (passed == "f") {
+            for (var i=0; i<images.length; i++) {
+                images[i].src="../foto/Gioco/Tema "+tema+"/"+level+"/"+(i+1)+".png";
+                if (i!=0) {
+                    images[i].style.visibility = "hidden";
+                }
             }
-        
-            return minuti + ":" + secondi;
+
+            let timePassed1 = 0;
+            let timePassed2 = 0;
+            let timePassed3 = 0;
+
+            function showTime (time) {
+                var minuti = Math.floor(time / 60);
+            
+                var secondi = time % 60;
+                if (secondi < 10) {
+                    secondi = "0" + secondi;
+                }
+            
+                return minuti + ":" + secondi;
+            }
+
+            var containers = document.getElementsByClassName("image");
+
+            for (let i=1; i<images.length; i++) {
+                containers[i].style.backgroundColor = "grey";
+            
+                if (i==1) {
+                    containers[i].insertAdjacentHTML("beforeend",`
+                        <svg class="timer" id="timer1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <g class="timer-inside">
+                                <circle class="timer-circle" id="timercircle1" cx="50" cy="50" r="45" />
+                            </g>
+                            <text id="timer-label1" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time1)} </text>
+                        </svg>`);
+                }
+                else if (i==2) {
+                    containers[i].insertAdjacentHTML("beforeend",`
+                        <svg class="timer" id="timer2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <g class="timer-inside">
+                                <circle class="timer-circle" id="timercircle2" cx="50" cy="50" r="45" />
+                            </g>
+                            <text id="timer-label2" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time2)} </text>
+                        </svg>`);
+                }
+                else {
+                    containers[i].insertAdjacentHTML("beforeend",`
+                        <svg class="timer" id="timer3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <g class="timer-inside">
+                                <circle class="timer-circle" id="timercircle3" cx="50" cy="50" r="45" />
+                            </g>
+                            <text id="timer-label3" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time3)} </text>
+                        </svg>`);
+                }
+            }
+            let timer = null;
+            startTimer();
+
+            function startTimer() {
+                timer = setInterval(() => {
+                    if(timeLeft1>0) {
+                        timePassed1 += 1;
+                        timeLeft1 = time1 - timePassed1;
+                        document.getElementById("timer-label1").innerHTML = showTime(timeLeft1);
+                    }
+                    else {
+                        document.getElementById("timer1").style.display = "none";
+                        images[1].style.visibility = "visible";
+                        primo = true;
+                    }
+                
+                    if(timeLeft2>0) {
+                        timePassed2 += 1;
+                        timeLeft2 = time2 - timePassed2;
+                        document.getElementById("timer-label2").innerHTML = showTime(timeLeft2);
+                    }
+                    else {
+                        document.getElementById("timer2").style.display = "none";
+                        images[2].style.visibility = "visible";
+                        secondo = true;
+                    }
+                
+                    if(timeLeft3>0) {
+                        timePassed3 += 1;
+                        timeLeft3 = time3 - timePassed3;
+                        document.getElementById("timer-label3").innerHTML = showTime(timeLeft3);
+                    }
+                    else {
+                        document.getElementById("timer3").style.display = "none";
+                        images[3].style.visibility = "visible";
+                        terzo = true;
+                        return;
+                    }
+                
+                }, 1000);
+            }
         }
-        
-        var containers = document.getElementsByClassName("image");
-        
-        for (let i=1; i<images.length; i++) {
-            containers[i].style.backgroundColor = "grey";
-        
-            if (i==1) {
-                containers[i].insertAdjacentHTML("beforeend",`
-                    <svg class="timer" id="timer1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <g class="timer-inside">
-                            <circle class="timer-circle" id="timercircle1" cx="50" cy="50" r="45" />
-                        </g>
-                        <text id="timer-label1" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time1)} </text>
-                    </svg>`);
+        else {
+            for (var i=0; i<images.length; i++) {
+                images[i].src="../foto/Gioco/Tema "+tema+"/"+level+"/"+(i+1)+".png";
             }
-            else if (i==2) {
-                containers[i].insertAdjacentHTML("beforeend",`
-                    <svg class="timer" id="timer2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <g class="timer-inside">
-                            <circle class="timer-circle" id="timercircle2" cx="50" cy="50" r="45" />
-                        </g>
-                        <text id="timer-label2" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time2)} </text>
-                    </svg>`);
-            }
-            else {
-                containers[i].insertAdjacentHTML("beforeend",`
-                    <svg class="timer" id="timer3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <g class="timer-inside">
-                            <circle class="timer-circle" id="timercircle3" cx="50" cy="50" r="45" />
-                        </g>
-                        <text id="timer-label3" x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"> ${showTime(time3)} </text>
-                    </svg>`);
-            }
-        }
-        let timer = null;
-        let primo = false, secondo = false, terzo = false;
-        startTimer();
-        
-        function startTimer() {
-            timer = setInterval(() => {
-                if(timeLeft1>0) {
-                    timePassed1 += 1;
-                    timeLeft1 = time1 - timePassed1;
-                    document.getElementById("timer-label1").innerHTML = showTime(timeLeft1);
-                }
-                else {
-                    document.getElementById("timer1").style.display = "none";
-                    images[1].style.visibility = "visible";
-                    primo = true;
-                }
-        
-                if(timeLeft2>0) {
-                    timePassed2 += 1;
-                    timeLeft2 = time2 - timePassed2;
-                    document.getElementById("timer-label2").innerHTML = showTime(timeLeft2);
-                }
-                else {
-                    document.getElementById("timer2").style.display = "none";
-                    images[2].style.visibility = "visible";
-                    secondo = true;
-                }
-        
-                if(timeLeft3>0) {
-                    timePassed3 += 1;
-                    timeLeft3 = time3 - timePassed3;
-                    document.getElementById("timer-label3").innerHTML = showTime(timeLeft3);
-                }
-                else {
-                    document.getElementById("timer3").style.display = "none";
-                    images[3].style.visibility = "visible";
-                    terzo = true;
-                    return;
-                }
-        
-            }, 1000);
         }
         
         //event listeners per bottoni
@@ -203,6 +211,9 @@ xhr.onreadystatechange = function() {
                         
                             xhr3.onreadystatechange = function() {
                                 if (this.readyState == 4 && this.status == 200) {
+                                    timeLeft1 = 0;
+                                    timeLeft2 = 0;
+                                    timeLeft3 = 0;
                                     overlay.classList.toggle('show');
                                 }
                             }
