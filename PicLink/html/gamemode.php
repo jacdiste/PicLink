@@ -79,7 +79,7 @@
                     <span id="span-arte">Sblocca</span>
                     <br>
                     <div id="money-block">
-                        <span>200</span>
+                        <span>120</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-coin" viewBox="0 0 16 16">
                             <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -108,7 +108,7 @@
                     <span id="span-anime">Sblocca</span>
                     <br>
                     <div id="money-block">
-                        <span>400</span>
+                        <span>200</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black" class="bi bi-coin" viewBox="0 0 16 16">
                             <path d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z"/>
                             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
@@ -166,8 +166,8 @@
                             </svg>
                     </div>
                     <button class="bottonepopup" type="submit">Conferma</button>
-                    <button class="bottonepopup" id="indietro_popup">Indietro</button> 
-                </form>        
+                </form>
+                    <button class="bottonepopup" id="indietro_popup">Indietro</button>         
             </div> 
         </div>
 
@@ -197,17 +197,17 @@
             <div class="popup-box"> 
                 <?php 
                     if(isset($_SESSION['newemail_error'])){
-                        echo "<span id='titolopopup' class='error'>E-mail già esistente, ritenta.</span>";
+                        echo "<span id='titolopopup' class='error'>Email già esistente, ritenta.</span>";
                         echo "<script> sessionStorage.setItem('newemail_error', 1);</script>";
                         unset($_SESSION['newemail_error']);
                     }
                     else{
-                        echo "<span id='titolopopup'>Inserisci la tua nuova e-mail</span>";
+                        echo "<span id='titolopopup'>Inserisci la tua nuova email</span>";
                     }
                 ?>
                 <form action="../php/change_email.php" method="post">
                     <div class="input-box">
-                        <input id="newemail" type="email" name="newemail" placeholder="Nuova e-mail" required />
+                        <input id="newemail" type="email" name="newemail" placeholder="Nuova email" required />
                     </div>
                     <button class="bottonepopup" type="submit">Conferma</button>
                 </form>  

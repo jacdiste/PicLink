@@ -23,10 +23,6 @@ xhr.onreadystatechange = function() {
         });
 
         for (let i=0; i<bottoni.length; i++) {
-            if (livelli[i] == "t") {
-                bottoni[i].style.backgroundColor = "grey";
-            }
-
             if (i>0) {
                 if (livelli[i-1]=="f") {
                     bottoni[i].disabled=true;

@@ -14,7 +14,7 @@ xhr.onreadystatechange = function() {
       sessionStorage.setItem("tema", "animali");
     }
     var temi = [ "animali", "arte", "anime"];
-    var prezzo = [0, 200, 400];
+    var prezzo = [0, 120, 200];
     var tema = sessionStorage.getItem("tema");
     
     if (tema == "animali") themeIndex = 1;

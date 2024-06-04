@@ -23,9 +23,9 @@ xhr.onreadystatechange = function() {
         //timer
         let primo = false, secondo = false, terzo = false;
         
-        const time1 = 10;
-        const time2 = 20;
-        const time3 = 30;
+        const time1 = 15;
+        const time2 = 25;
+        const time3 = 40;
 
         let timeLeft1 = time1;
         let timeLeft2= time2;
@@ -191,20 +191,20 @@ xhr.onreadystatechange = function() {
                             let post= "monete=";
                             
                             if (primo==false) {
+                                document.getElementById("monetepopup").innerText= "Hai guadagnato 60 monete!";
+                                post += "60";
+                            }
+                            else if (secondo == false) {
                                 document.getElementById("monetepopup").innerText= "Hai guadagnato 40 monete!";
                                 post += "40";
                             }
-                            else if (secondo == false) {
-                                document.getElementById("monetepopup").innerText= "Hai guadagnato 20 monete!";
-                                post += "20";
-                            }
                             else if (terzo == false) {
-                                document.getElementById("monetepopup").innerText= "Hai guadagnato 10 monete!";
-                                post += "10";
+                                document.getElementById("monetepopup").innerText= "Hai guadagnato 25 monete!";
+                                post += "25";
                             }
                             else {
-                                document.getElementById("monetepopup").innerText= "Hai guadagnato 5 monete!";
-                                post += "5";
+                                document.getElementById("monetepopup").innerText= "Hai guadagnato 15 monete!";
+                                post += "15";
                             }
 
                             post += "&tema="+tema+"&livello="+level;
