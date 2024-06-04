@@ -102,7 +102,7 @@ xhr.onreadystatechange = function() {
 
     indietro_popup.addEventListener("click", () => {
       togglePopup();
-      document.getElementById("titolopopup").display = "none";
+      location.href = "./gamemode.php";
     });
 
     indietro_popup1.addEventListener("click", () => {
