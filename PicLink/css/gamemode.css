@@ -23,7 +23,7 @@ body {
   width: 250px;
   height: 80px;
   padding: 10px 20px;
-  background-color: #ffffff;
+  background-color: #ffe5b4;
   border-radius: 14px;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@ body {
   left: 40px;
   padding-top: 18px;
   outline: auto;
-  background: white;
+  background: #114250cd;
   border-radius: 17px;
   z-index: 100;
   animation: fadeInDown 1s;
@@ -67,6 +67,7 @@ body {
 .dropdown button {
   width: 200px;
   height: 60px;
+  background-color: #ffe5b4;
 }
 
 @keyframes fadeInDown { 
@@ -88,7 +89,7 @@ body {
   height: 40px;
   margin-left: auto;
   padding: 10px 20px;
-  background-color: #ffffff;
+  background-color: #ffe5b4;
   border-radius: 17px;
   display: flex;
   align-items: center;
@@ -273,7 +274,7 @@ body {
   margin-bottom: 20px;
   width: 550px;
   height: 80px;
-  background-color: #ffffff;
+  background-color: #ffe8ab;
   border-radius: 16px;
   border-width: 0 0 4.5px 0;
   box-sizing: border-box;
