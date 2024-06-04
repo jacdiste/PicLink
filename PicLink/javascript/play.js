@@ -1,3 +1,4 @@
+//get ajax per dati utente dal database
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -19,6 +20,7 @@ xhr.onreadystatechange = function() {
         
         var images = document.getElementsByClassName("foto");
         
+        //timer
         for (var i=0; i<images.length; i++) {
             images[i].src="../foto/Gioco/Tema "+tema+"/"+level+"/"+(i+1)+".png";
             if (i!=0) {
@@ -125,7 +127,7 @@ xhr.onreadystatechange = function() {
             }, 1000);
         }
         
-        
+        //event listeners per bottoni
         const back = document.getElementById("back");
         const gobackhome = document.getElementById("gobackhome");
         const prossimolvl = document.getElementById("prossimolvl");
@@ -154,7 +156,9 @@ xhr.onreadystatechange = function() {
             togglePopup();
         });
         
+        //gestione popup livello indovinato
         function togglePopup() {
+            //get ajax per soluzione del livello dal json delle soluzioni
             var xhr2 = new XMLHttpRequest();
         
             xhr2.onreadystatechange = function() {
@@ -174,6 +178,7 @@ xhr.onreadystatechange = function() {
              
                     if (sol.includes(answer)) {
                         if (passed == "f") {
+                            //post ajax per incremento monete e livello passato
                             var xhr3 = new XMLHttpRequest(); 
                             let post= "monete=";
                             

@@ -6,6 +6,19 @@
     user-select: none;
 }
 
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* =============================== Background slideshow ================================== */
+
 #background-container {
     position: fixed;
     top: 0;
@@ -36,16 +49,10 @@
     z-index: 2;
   }
   
-body {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-}
+
+/* ========================================================================================== */
+
+/* =============================== Box login/registrazione ================================== */
 
 .wrapper {
     width: 450px;
@@ -142,6 +149,10 @@ body {
     text-decoration: underline;
 }
 
+/* ================================================================================= */
+
+/* ================================= Errore ======================================== */
+
 .error {
     display: flex;
     flex-direction: column;
@@ -158,6 +169,10 @@ body {
 .error a {
     color: red;
 }
+
+/* ====================================================================================================== */
+
+/* =============================== Registrazione avvenuta con successo ================================== */
 
 .success{
     display: flex;

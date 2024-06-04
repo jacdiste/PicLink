@@ -1,3 +1,4 @@
+//gestione lucchetto "mostra password"
 function myFunction() {
     var password = document.getElementById("password");
     var lock = document.getElementById("lock");

@@ -3,12 +3,14 @@ const bottoni=document.getElementsByClassName("bottone");
 var tema = window.location.search.substring(1);
 tema= tema.split("=")[1];
 
+//get ajax per dati utente dal database
 var xhr = new XMLHttpRequest();
 
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(this.responseText);
         
+        //gestione livelli
         var livelli = data["tema "+tema];
         livelli = livelli.substring(1,livelli.length-1);
         livelli = livelli.split(",");
